@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Essays on 春树暮云</title>
-        <link>https://leng-yd.github.io/categories/essays/</link>
+        <link>http://localhost:1313/categories/essays/</link>
         <description>Recent content in Essays on 春树暮云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>春树暮云</copyright>
-        <lastBuildDate>Sat, 06 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://leng-yd.github.io/categories/essays/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 06 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/essays/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>“蝉蜕尘埃外，蝶梦水云乡”</title>
-        <link>https://leng-yd.github.io/p/a-trip-to-changsha/</link>
+        <link>http://localhost:1313/p/a-trip-to-changsha/</link>
         <pubDate>Sat, 06 Jul 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://leng-yd.github.io/p/a-trip-to-changsha/</guid>
+        <guid>http://localhost:1313/p/a-trip-to-changsha/</guid>
         <description>&lt;img src="https://dongli.pages.dev/file/1f6893647f31558236123.jpg" alt="Featured image of post “蝉蜕尘埃外，蝶梦水云乡”" /&gt;&lt;p&gt;前段时间，我校举行了一次赴湖南的研学旅行，共历时五天。在此期间，我们往返于长沙、韶山两地，流连于乡村、城市之间，见证传统文化和现代社会的融合与碰撞，闲步湖湘，展望未来。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;day-1束装就道&#34;&gt;Day 1：束装就道
@@ -258,10 +258,10 @@
         </item>
         <item>
         <title>二零二四，凌云壮志</title>
-        <link>https://leng-yd.github.io/p/a-look-back-at-2023/</link>
+        <link>http://localhost:1313/p/a-look-back-at-2023/</link>
         <pubDate>Wed, 31 Jan 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://leng-yd.github.io/p/a-look-back-at-2023/</guid>
+        <guid>http://localhost:1313/p/a-look-back-at-2023/</guid>
         <description>&lt;p&gt;期末考试结束后，高中的第一个学期告一段落。2024年的第一个月也将要过完。过去的2023年过得实在不算精彩——毕竟“世事一场大梦，人生几度秋凉”。对我个人而言，2023年是充满挑战和机遇的一年。&lt;/p&gt;
 &lt;h3 id=&#34;代码如诗&#34;&gt;代码如诗
 &lt;/h3&gt;&lt;p&gt;这句话是我在 WordPress 官网上读到的。英文版作&amp;quot;Code is poetry.&amp;quot;&lt;/p&gt;
@@ -400,20 +400,20 @@
         </item>
         <item>
         <title>漫漫长梦</title>
-        <link>https://leng-yd.github.io/p/long-dreams/</link>
+        <link>http://localhost:1313/p/long-dreams/</link>
         <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://leng-yd.github.io/p/long-dreams/</guid>
+        <guid>http://localhost:1313/p/long-dreams/</guid>
         <description>&lt;img src="https://dongli.pages.dev/file/74beaf2497a1c52909704.jpg" alt="Featured image of post 漫漫长梦" /&gt;&lt;p&gt;同学、朋友们，&lt;/p&gt;
 &lt;p&gt;当我坐下来，用这些字迹向你们告别的时候，我的心里充满复杂的情感。我想把这篇 post 献给你们，谢谢你们一直以来对暮云的陪伴和支持。经过深思熟虑，我不得不宣布我的博客将&lt;strong&gt;暂时停止更新&lt;/strong&gt;。因为这是一段大多数人都无法回避的人生转折点，我即将开始新的学习生活，需要投入更多的时间和精力。&lt;/p&gt;
 &lt;p&gt;这篇文章我已经构思许久，在我独自面对这个决定的时候，我曾数次想到了标题“漫漫长梦”。人生如梦。我想，它象征着我对人生的思考和哲学的追寻，也映射出无数人追求真理和发现人生意义的漫长旅程。
-&lt;a class=&#34;link&#34; href=&#34;https://leng-yd.github.io/p/hello-world/&#34; &gt;《Hello World》&lt;/a&gt;&lt;/p&gt;
+&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/hello-world/&#34; &gt;《Hello World》&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;春树暮云博客是我心灵的寄托，从 22 年末以来，我在这里与读者们分享自己的探索和收获。从我的文字中，不难看出，人生就如同一场漫长的梦，无论是高中、大学还是日后走进社会，我们都将在不同的阶段中筑梦、逐梦。停下来意味着重新思考和重新定位，让不才暮云能够更好地专注于未来的探索。
-&lt;a class=&#34;link&#34; href=&#34;https://leng-yd.github.io/p/long-dreams&#34; &gt;《漫漫长梦》&lt;/a&gt;&lt;/p&gt;
+&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/long-dreams&#34; &gt;《漫漫长梦》&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;回首过去，饱尝光荣屈辱，遍沐春风雪霜。我明白人生是一段漫长而复杂的旅程。正因如此，我对自己加以要求，要勇敢追随自己的梦想，并且无畏地破茧而出。别让不确定性吓到自己，因为正是不确定性激发了我们的潜力。
-&lt;a class=&#34;link&#34; href=&#34;https://leng-yd.github.io/p/certainty-and-uncertainty/&#34; &gt;《确定性和不确定性》&lt;/a&gt;&lt;/p&gt;
+&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/certainty-and-uncertainty/&#34; &gt;《确定性和不确定性》&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;当我们在拨开人生的迷雾时，我们会遇到无数的疑问和挑战。我们会跌倒，受伤，但也会重新站起来。这正是人生的真谛所在，一个伟大而真实的故事需要经历坎坷与起伏，方能演绎出奇迹。我想，或许渺小的人类也可以透过写作，完成生命的伟大和壮阔。
-&lt;a class=&#34;link&#34; href=&#34;https://leng-yd.github.io/p/restart/&#34; &gt;《重新开始》&lt;/a&gt;&lt;/p&gt;
+&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/p/restart/&#34; &gt;《重新开始》&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;虽然我将暂时离开博客世界，但我的探索和思考并未结束。我将努力应对新的挑战，迎接新的机遇，积累新的知识和经验。我希望在一段时间后，能够带着更丰富的见解回到这里，与你们再次相遇。&lt;/p&gt;
 &lt;p&gt;最后，我想感谢博客每一个读者，你们的支持鼓励是我前进的动力。请记得，即使博客的更新暂时停止，心灵的探索和思考永远不会消失。让我们一同追随“漫漫长梦”，探索人生的深藏哲理。“把酒祝东风，且共从容！”&lt;/p&gt;
 &lt;p align=&#34;right&#34;&gt;衷心地向你们致意&lt;br&gt;暮云君&lt;br&gt;2023年8月22日于 Dreamland&lt;/p&gt;
@@ -432,10 +432,10 @@
         </item>
         <item>
         <title>确定性与不确定性</title>
-        <link>https://leng-yd.github.io/p/certainty-and-uncertainty/</link>
+        <link>http://localhost:1313/p/certainty-and-uncertainty/</link>
         <pubDate>Thu, 10 Aug 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://leng-yd.github.io/p/certainty-and-uncertainty/</guid>
+        <guid>http://localhost:1313/p/certainty-and-uncertainty/</guid>
         <description>&lt;img src="https://e7a23aee.dongli.pages.dev/file/2318bc833d140a44d2df0.jpg" alt="Featured image of post 确定性与不确定性" /&gt;&lt;blockquote&gt;
 &lt;p&gt;The mighty desert is burning for the love of a blade of grass who shakes her head and laughs and flies away.&lt;br&gt;&lt;p align=&#34;right&#34;&gt;&lt;i&gt;Stray Birds&lt;/i&gt;&lt;/p&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -480,10 +480,10 @@
         </item>
         <item>
         <title>重新开始</title>
-        <link>https://leng-yd.github.io/p/restart/</link>
+        <link>http://localhost:1313/p/restart/</link>
         <pubDate>Wed, 28 Jun 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://leng-yd.github.io/p/restart/</guid>
+        <guid>http://localhost:1313/p/restart/</guid>
         <description>&lt;p&gt;检验自己三年学习成果的考试已经结束，偷得浮生半日闲。在误删数据库导致博客文章被悉数清空的两个月后，我又一次登录进了这个网站。意图很明显，我要重新开始。&lt;/p&gt;
 &lt;p&gt;大概是因为我最近经历了很多事情吧，当我翻看以前写的作品时，感觉现在的我和过去的我已经截然不同了。如果将这两个时间段的文字放在一起对比，会感受到一种奇妙的反差吧。&lt;/p&gt;
 &lt;p&gt;积攒了很多话想说，却不愿意在互联网的方寸之间挥洒笔墨——我的思绪还是太发散，不适合写这篇题为“重新开始”的文章。我深知自己不能懈怠，只愿意趁着半日光阴把网站重新建好，或许也算是自己成长的见证。&lt;/p&gt;
@@ -496,10 +496,10 @@
         </item>
         <item>
         <title>Hello World</title>
-        <link>https://leng-yd.github.io/p/hello-world/</link>
+        <link>http://localhost:1313/p/hello-world/</link>
         <pubDate>Sat, 31 Dec 2022 00:00:00 +0000</pubDate>
         
-        <guid>https://leng-yd.github.io/p/hello-world/</guid>
+        <guid>http://localhost:1313/p/hello-world/</guid>
         <description>&lt;p&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://me.lengyandong.eu.org&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;春树暮云&lt;/a&gt;&lt;/strong&gt; has been successfully created!
 &lt;font color=&#34;red&#34;&gt;&lt;h4&gt;why we call the site 春树暮云 ?&lt;/h4&gt;&lt;/font&gt;“春树暮云” is from a piece of poem written by Du Fu, a well-known poet. In the past, it means missing friends from afar. Now I think it also means pursue our ideals. Spring trees and evining clouds symbolize our unattainable dreams, hard to achieve but also have hope. It&amp;rsquo;s our duty to achieve it, achieve “春树暮云”。&lt;/p&gt;
