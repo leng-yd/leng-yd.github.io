@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>网络安全 on 春树暮云</title>
-        <link>http://localhost:1313/tags/cybersecurity/</link>
+        <link>https://leng-yd.github.io/tags/cybersecurity/</link>
         <description>Recent content in 网络安全 on 春树暮云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>春树暮云</copyright><atom:link href="http://localhost:1313/tags/cybersecurity/index.xml" rel="self" type="application/rss+xml" />
+        <copyright>春树暮云</copyright><atom:link href="https://leng-yd.github.io/tags/cybersecurity/index.xml" rel="self" type="application/rss+xml" />
     </channel>
 </rss>
