@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Code on 春树暮云</title>
-        <link>http://localhost:1313/categories/code/</link>
+        <link>https://leng-yd.github.io/categories/code/</link>
         <description>Recent content in Code on 春树暮云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>春树暮云</copyright>
-        <lastBuildDate>Fri, 18 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/code/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 18 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://leng-yd.github.io/categories/code/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Web 2 Pwa</title>
-        <link>http://localhost:1313/p/web-2-pwa/</link>
+        <link>https://leng-yd.github.io/p/web-2-pwa/</link>
         <pubDate>Fri, 18 Aug 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/web-2-pwa/</guid>
+        <guid>https://leng-yd.github.io/p/web-2-pwa/</guid>
         <description>&lt;img src="https://dongli.pages.dev/file/182760af93f035e9f2c31.jpg" alt="Featured image of post Web 2 Pwa" /&gt;&lt;p&gt;这是在今天开学考试后，总结自己让春树暮云适配PWA的一段经历和教程。&lt;del&gt;枯燥无味&lt;/del&gt;&lt;/p&gt;
 &lt;h2 id=&#34;什么是pwa&#34;&gt;什么是PWA
 &lt;/h2&gt;&lt;p&gt;PWA（Progressive Web App）是一种用于开发Web应用程序的技术和方法。PWA结合了传统的Web应用程序和原生移动应用程序的最佳特性，旨在提供更好的用户体验。&lt;/p&gt;
@@ -310,10 +310,10 @@
         </item>
         <item>
         <title>域名跳转解决方案</title>
-        <link>http://localhost:1313/p/the-solution-of-domain-abnormal-redirections/</link>
+        <link>https://leng-yd.github.io/p/the-solution-of-domain-abnormal-redirections/</link>
         <pubDate>Sat, 01 Jul 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/the-solution-of-domain-abnormal-redirections/</guid>
+        <guid>https://leng-yd.github.io/p/the-solution-of-domain-abnormal-redirections/</guid>
         <description>&lt;p&gt;今天考完自招，将原来的个人网站彻底迁移到这里，想起了曾经的网站被DNS劫持过，便以我之所学，写一小段文字，以备不时之需。&lt;/p&gt;
 &lt;p&gt;旧日班上，下课时间，一群同学总喜欢凑在电脑屏幕前玩电脑。一次他们在网上冲浪一段时间后，突然怪叫起来。我抬起头，看见几个男生向我跑来，大笑着告诉我我的主页跳转到了其他网站。此时他们已经把跳转后的网站关掉了。在看了浏览记录后，我大为诧异，但我晚上回家打开网站时，却一如往常。&lt;strong&gt;事后经分析，我的原网站大概率被DNS劫持。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;由于申请到了新域名，原来的网站已被弃用，但新站还是需要预防DNS劫持的。以下是我对应对DNS劫持的方法。&lt;/p&gt;
