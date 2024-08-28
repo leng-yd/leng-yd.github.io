@@ -3,7 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://leng-yd.github.io/</loc>
-    <lastmod>2024-08-26T00:00:00+00:00</lastmod>
+    <lastmod>2024-08-28T20:35:54+08:00</lastmod>
+  </url><url>
+    <loc>https://leng-yd.github.io/categories/build/</loc>
+    <lastmod>2024-08-28T20:35:54+08:00</lastmod>
+  </url><url>
+    <loc>https://leng-yd.github.io/categories/</loc>
+    <lastmod>2024-08-28T20:35:54+08:00</lastmod>
+  </url><url>
+    <loc>https://leng-yd.github.io/p/a-comparison-between-typecho-and-hugo/</loc>
+    <lastmod>2024-08-28T20:35:54+08:00</lastmod>
+  </url><url>
+    <loc>https://leng-yd.github.io/post/</loc>
+    <lastmod>2024-08-28T20:35:54+08:00</lastmod>
   </url><url>
     <loc>https://leng-yd.github.io/page/</loc>
     <lastmod>2024-08-26T00:00:00+00:00</lastmod>
@@ -14,13 +26,7 @@
     <loc>https://leng-yd.github.io/p/a-trip-to-changsha/</loc>
     <lastmod>2024-07-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://leng-yd.github.io/categories/</loc>
-    <lastmod>2024-07-06T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://leng-yd.github.io/categories/essays/</loc>
-    <lastmod>2024-07-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://leng-yd.github.io/post/</loc>
     <lastmod>2024-07-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://leng-yd.github.io/tags/</loc>
@@ -59,7 +65,7 @@
     <loc>https://leng-yd.github.io/tags/qrcode/</loc>
     <lastmod>2023-07-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://leng-yd.github.io/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</loc>
+    <loc>https://leng-yd.github.io/tags/cybersecurity/</loc>
     <lastmod>2023-07-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://leng-yd.github.io/p/the-solution-of-domain-abnormal-redirections/</loc>
@@ -77,8 +83,6 @@
     <loc>https://leng-yd.github.io/about/</loc>
   </url><url>
     <loc>https://leng-yd.github.io/search/</loc>
-  </url><url>
-    <loc>https://leng-yd.github.io/tags/cybersecurity/</loc>
   </url><url>
     <loc>https://leng-yd.github.io/links/</loc>
   </url>
