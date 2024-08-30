@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="一起来用世界上最快的网站构建框架搭建个人博客站点吧！">
+<title>从零到一，用 Hugo 打造你的个人网站</title>
+
+<link rel='canonical' href='https://brume.top/p/build-your-personal-blog-with-hugo/'>
+
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="从零到一，用 Hugo 打造你的个人网站">
+<meta property='og:description' content="一起来用世界上最快的网站构建框架搭建个人博客站点吧！">
+<meta property='og:url' content='https://brume.top/p/build-your-personal-blog-with-hugo/'>
+<meta property='og:site_name' content='春树暮云'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Hugo' /><meta property='article:published_time' content='2024-08-30T18:12:32&#43;08:00'/><meta property='article:modified_time' content='2024-08-30T18:12:32&#43;08:00'/><meta property='og:image' content='https://img.brume.top/file/026540fd273527d5f75c0.jpg' />
+<meta name="twitter:title" content="从零到一，用 Hugo 打造你的个人网站">
+<meta name="twitter:description" content="一起来用世界上最快的网站构建框架搭建个人博客站点吧！"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://img.brume.top/file/026540fd273527d5f75c0.jpg' />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+
+  
+
+<style>
+    :root {
+        --sys-font-family: "EB Garamond";
+        --zh-font-family: "LXGW WenKai Screen R";
+        --base-font-family: "EB Garamond", "LXGW WenKai Screen R";
+        --article-font-family: "LXGW WenKai Screen R"
+    }
+</style>
+<script>
+    (function() {
+        const e = document.createElement("link");
+        e.href = "https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/lxgwwenkaiscreenr.css", e.type = "text/css", e.rel = "stylesheet", document.head.appendChild(e)
+    })(),
+    function() {
+        const e = document.createElement("link");
+        e.href = "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Source+Code+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Cinzel+Decorative:wght@700&display=swap", e.type = "text/css", e.rel = "stylesheet", document.head.appendChild(e)
+    }(),
+    function() {
+        const e = document.createElement("link");
+        e.href = "https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap", e.type = "text/css", e.rel = "stylesheet", document.head.appendChild(e)
+    }()
+</script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu13739649187745961479.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">💥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">春树暮云</a></h1>
+            <h2 class="site-description">醉困不知醒，欹枕卧江流</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/leng-yd'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://brume.top/index.xml'
+                        target="_blank"
+                        title="RSS"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="5" cy="19" r="1" />
+  <path d="M4 4a16 16 0 0 1 16 16" />
+  <path d="M4 11a9 9 0 0 1 9 9" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/reading/' >
+                
+                
+                
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-bookmarks"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 10v11l-5 -3l-5 3v-11a3 3 0 0 1 3 -3h4a3 3 0 0 1 3 3z" /><path d="M11 3h5a3 3 0 0 1 3 3v11" /></svg>
+                
+                <span>读书</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#下载并安装-hugo">下载并安装 Hugo</a></li>
+        <li><a href="#创建站点">创建站点</a></li>
+        <li><a href="#配置主题">配置主题</a></li>
+        <li><a href="#撰写文章">撰写文章</a>
+          <ol>
+            <li><a href="#常用-front-matter-字段说明">常用 Front Matter 字段说明</a></li>
+          </ol>
+        </li>
+        <li><a href="#部署博客">部署博客</a></li>
+        <li><a href="#部署至-github-pages">部署至 Github Pages</a></li>
+        <li><a href="#部署至-vercel-并绑定域名">部署至 Vercel 并绑定域名</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/build-your-personal-blog-with-hugo/">
+                
+                    <img src="https://img.brume.top/file/026540fd273527d5f75c0.jpg" loading="lazy" alt="Featured image of post 从零到一，用 Hugo 打造你的个人网站" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/build/" style="background-color: #2a9d8f; color: #fff;">
+                Build
+            </a>
+        
+            <a href="/categories/code/" style="background-color: #2a9d8f; color: #fff;">
+                Code
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/build-your-personal-blog-with-hugo/">从零到一，用 Hugo 打造你的个人网站</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            一起来用世界上最快的网站构建框架搭建个人博客站点吧！
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Aug 30, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 13 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>本文将介绍在本地搭建 Hugo 并通过 Github Pages 和 Vercel 部署 Hugo 的方法。以下所叙之方法就是我在部署本站点时所使用的，具有借鉴意义。如果在部署过程中遇到报错或其他困难，可以上网搜索或在评论区留言——我看到后会提供力所能及的建议。</p>
+<hr>
+<p>在部署 Hugo 之前，需要进行的准备：</p>
+<ol>
+<li>安装 Git. Git 用于版本控制和代码管理。Linux 和 MacOS 系统中内置 Git ，而 Windows 用户需要手动安装。下载地址: <a class="link" href="https://git-scm.com/"  target="_blank" rel="noopener"
+    >https://git-scm.com/</a> 。安装过程中不需要选择任何多余选项，一直点下一步即可。</li>
+<li>拥有一个 Github 账号，用于托管代码文件。注册地址: <a class="link" href="https://github.com/login"  target="_blank" rel="noopener"
+    >https://github.com/login</a></li>
+<li>拥有一个称手的文本编辑器：推荐使用 Visual Studio Code、Sublime Text 或者你喜欢的编辑器。</li>
+<li>网络环境良好。为了避免下载文件或上传文件至 Github 过程中出现错误，建议科学上网。</li>
+</ol>
+<p>如果你做好了如下准备，那么恭喜你，你可以进行下一步啦！</p>
+<h3 id="下载并安装-hugo">下载并安装 Hugo
+</h3><p>在 Hugo 的 <a class="link" href="https://github.com/gohugoio/hugo/releases"  target="_blank" rel="noopener"
+    >Release</a> 页面找到最新版本的 Hugo ，选择相应版本下载。
+<img src="https://img.brume.top/file/df532d0a69af8a2fcb6e5.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="下载"
+	
+	
+>
+此外，还可以通过 Hugo 官网上的<a class="link" href="https://gohugo.io/installation/"  target="_blank" rel="noopener"
+    >指示</a>下载。</p>
+<h3 id="创建站点">创建站点
+</h3><p>将下载后的内容放在一个空文件夹中。在当前文件夹上方地址栏输入 <code>cmd</code> ，唤起命令行。在命令行中输入 <code>hugo new site 你的站点名称</code> ，创建站点。
+<img src="https://img.brume.top/file/3a219c3ea52ff66f700eb.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="创建站点"
+	
+	
+>
+<img src="https://img.brume.top/file/4d84198cc019b29ac3765.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="创建站点"
+	
+	
+></p>
+<p>输入 <code>cd 你的站点名称</code> 切换目录，并将 hugo.exe 复制到这个文件夹中，以避免配置环境变量。
+<img src="https://img.brume.top/file/7c04bb1df93f33404aa1d.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="#"
+	
+	
+></p>
+<p>用命令行在当前目录下输入 <code>hugo server</code> 启动本地站点(通过 <code>Ctrl + C</code> 关闭这一服务)。地址通常是 <code>localhost:1313</code> 。如果页面显示“Page not found”，说明此前的所有配置都是正常无误的。</p>
+<h3 id="配置主题">配置主题
+</h3><p>Hugo 默认是没有主题的，需要到 <a class="link" href="https://themes.gohugo.io/"  target="_blank" rel="noopener"
+    >官网</a> 去下载主题。我使用的主题是 Jimmy Cai 创作的 Stack 主题。接下来的部分内容会以此主题为例。</p>
+<p>将主题下载完成后并解压至 <code>themes</code> 文件夹中，将 <code>exampleSite</code> 文件夹中的 <code>content</code> 和<code>hugo.yaml</code> 复制到主文件夹中，并删掉原来的 <code>hugo.toml</code> 和 <code>Content/post/rich-content</code> ，避免出现不兼容的错误。（图片上的的“春树暮云”是本博客名）
+<img src="https://img.brume.top/file/bb371d4b48863c2f194a7.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="配置主题1"
+	
+	
+>
+<img src="https://img.brume.top/file/343ebc3e763dea4686394.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="配置主题2"
+	
+	
+></p>
+<p>修改 <code>hugo.yaml</code> 中的 theme 选项，将其修改为与主题文件夹同名。
+<img src="https://img.brume.top/file/7e59bd5df68a54e4f0699.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="修改hugo.yaml"
+	
+	
+></p>
+<p>再次在命令行输入 <code>hugo server</code>启动服务，若此时能看见类似下图的样式，说明此前操作无误。
+<img src="https://img.brume.top/file/af0f477c4daa264b6e630.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="#"
+	
+	
+>
+<img src="https://img.brume.top/file/1d559e9cb05993ee97aac.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="#"
+	
+	
+></p>
+<p>在 <code>config.yaml</code> 中输入相关配置。文件各项配置解释如下，用作参考：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">baseurl</span><span class="p">:</span><span class="w"> </span><span class="l">https://example.com </span><span class="w"> </span><span class="c"># 网站的基本 URL 。替换为你自己的网站域名。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">languageCode</span><span class="p">:</span><span class="w"> </span><span class="l">en-us </span><span class="w"> </span><span class="c"># 网站的默认语言代码，zh-cn 指中文简体。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">theme</span><span class="p">:</span><span class="w"> </span><span class="l">hugo-theme-stack </span><span class="w"> </span><span class="c"># 使用的 Hugo 主题，这里是 Stack 主题。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">paginate</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">  </span><span class="c"># 每页显示的内容数量，通常用于分页设置。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">Example Site </span><span class="w"> </span><span class="c"># 网站的标题，会显示在浏览器标签上。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">copyright</span><span class="p">:</span><span class="w"> </span><span class="l">Example Person </span><span class="w"> </span><span class="c"># 网站的版权信息，通常显示在页面底部。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Theme i18n support</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Available values: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">DefaultContentLanguage</span><span class="p">:</span><span class="w"> </span><span class="l">en </span><span class="w"> </span><span class="c"># 设置网站的默认内容语言。可选值见上注释。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># This will make .Summary and .WordCount behave correctly for CJK languages.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">hasCJKLanguage</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">  </span><span class="c"># 如果默认语言是中文、日文或韩文，设置为 true 以确保摘要和字数统计正确。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">languages</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">en</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">languageName</span><span class="p">:</span><span class="w"> </span><span class="l">English </span><span class="w"> </span><span class="c"># 英语语言配置</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">Example Site </span><span class="w"> </span><span class="c"># 英文站点标题</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">  </span><span class="c"># 语言权重，数值越小排序越靠前</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">params</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">Example description </span><span class="w"> </span><span class="c"># 英文站点描述</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">zh-cn</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">languageName</span><span class="p">:</span><span class="w"> </span><span class="l">中文 </span><span class="w"> </span><span class="c"># 中文语言配置</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">演示站点 </span><span class="w"> </span><span class="c"># 中文站点标题</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">  </span><span class="c"># 中文站点语言权重</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">params</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">演示说明 </span><span class="w"> </span><span class="c"># 中文站点描述</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ar</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">languageName</span><span class="p">:</span><span class="w"> </span><span class="l">عربي </span><span class="w"> </span><span class="c"># 阿拉伯语配置</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">languagedirection</span><span class="p">:</span><span class="w"> </span><span class="l">rtl </span><span class="w"> </span><span class="c"># 文字方向，从右到左</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">موقع تجريبي </span><span class="w"> </span><span class="c"># 阿拉伯语站点标题</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">  </span><span class="c"># 阿拉伯语站点语言权重</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">params</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">وصف تجريبي </span><span class="w"> </span><span class="c"># 阿拉伯语站点描述</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c"># Change it to your Disqus shortname before using</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">disqus</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">shortname</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;hugo-theme-stack&#34;</span><span class="w">  </span><span class="c"># Disqus 评论系统的短名称，需替换为你自己的 Disqus 短名称。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c"># GA Tracking ID</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">googleAnalytics</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">id</span><span class="p">:</span><span class="w">  </span><span class="c"># Google Analytics 追踪 ID，用于网站流量统计。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">permalinks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">post</span><span class="p">:</span><span class="w"> </span><span class="l">/p/:slug/ </span><span class="w"> </span><span class="c"># 博客文章的永久链接格式，使用文章的 slug 作为路径。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">page</span><span class="p">:</span><span class="w"> </span><span class="l">/:slug/ </span><span class="w"> </span><span class="c"># 页面内容的永久链接格式。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">params</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">mainSections</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="l">post </span><span class="w"> </span><span class="c"># 主内容区域，显示文章内容。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">featuredImageField</span><span class="p">:</span><span class="w"> </span><span class="l">image </span><span class="w"> </span><span class="c"># 特色图片字段的名称。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">rssFullContent</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span><span class="c"># RSS 提要是否包含全文内容。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">favicon: # e.g.</span><span class="p">:</span><span class="w"> </span><span class="l">favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># 网站的favicon路径，例如`/favicon.ico`。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">footer</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">since</span><span class="p">:</span><span class="w"> </span><span class="m">2020</span><span class="w">  </span><span class="c"># 网站创建年份，通常显示在页脚。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">customText</span><span class="p">:</span><span class="w">  </span><span class="c"># 自定义页脚文本。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">dateFormat</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">published</span><span class="p">:</span><span class="w"> </span><span class="l">Jan 02, 2006 </span><span class="w"> </span><span class="c"># 发布日期格式。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">lastUpdated</span><span class="p">:</span><span class="w"> </span><span class="l">Jan 02, 2006 15:04 MST </span><span class="w"> </span><span class="c"># 最后更新日期格式。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">sidebar</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">emoji</span><span class="p">:</span><span class="w"> </span><span class="l">🍥 </span><span class="w"> </span><span class="c"># 侧边栏标题旁显示的 emoji。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">subtitle</span><span class="p">:</span><span class="w"> </span><span class="l">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span><span class="w"> </span><span class="c"># 侧边栏的副标题。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">avatar</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span><span class="c"># 是否启用头像显示。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">local</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span><span class="c"># 是否使用本地头像。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l">img/avatar.png </span><span class="w"> </span><span class="c"># 头像图片路径。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">article</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">math</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">  </span><span class="c"># 是否支持数学公式渲染。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">toc</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span><span class="c"># 是否显示文章目录。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">readingTime</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span><span class="c"># 是否显示预计阅读时间。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">license</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span><span class="c"># 是否启用文章版权信息。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l">Licensed under CC BY-NC-SA 4.0 </span><span class="w"> </span><span class="c"># 默认版权协议。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">comments</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span><span class="c"># 是否启用评论功能。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l">disqus </span><span class="w"> </span><span class="c"># 选择的评论提供商，默认为 Disqus。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">disqusjs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">shortname</span><span class="p">:</span><span class="w">  </span><span class="c"># DisqusJS 的短名称。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">apiUrl</span><span class="p">:</span><span class="w">  </span><span class="c"># DisqusJS 的 API URL。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">apiKey</span><span class="p">:</span><span class="w">  </span><span class="c"># DisqusJS 的 API Key。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">admin</span><span class="p">:</span><span class="w">  </span><span class="c"># DisqusJS 的管理员用户名。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">adminLabel</span><span class="p">:</span><span class="w">  </span><span class="c"># DisqusJS 管理员标签。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">utterances</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">repo</span><span class="p">:</span><span class="w">  </span><span class="c"># Utterances 评论系统的 GitHub 仓库地址。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">issueTerm</span><span class="p">:</span><span class="w"> </span><span class="l">pathname </span><span class="w"> </span><span class="c"># Utterances 评论系统的议题关联方式，使用页面路径。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">label</span><span class="p">:</span><span class="w">  </span><span class="c"># Utterances 评论系统的标签。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">beaudar</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">repo</span><span class="p">:</span><span class="w">  </span><span class="c"># Beaudar 评论系统的 GitHub 仓库地址。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">issueTerm</span><span class="p">:</span><span class="w"> </span><span class="l">pathname </span><span class="w"> </span><span class="c"># Beaudar 评论系统的议题关联方式。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">label</span><span class="p">:</span><span class="w">  </span><span class="c"># Beaudar 评论系统的标签。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">theme</span><span class="p">:</span><span class="w">  </span><span class="c"># Beaudar 评论系统的主题。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">remark42</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">host</span><span class="p">:</span><span class="w">  </span><span class="c"># Remark42 的主机地址。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">site</span><span class="p">:</span><span class="w">  </span><span class="c"># Remark42 的站点标识符。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">locale</span><span class="p">:</span><span class="w">  </span><span class="c"># Remark42 的语言设置。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">vssue</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">platform</span><span class="p">:</span><span class="w">  </span><span class="c"># Vssue 使用的平台（例如 GitHub）。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">owner</span><span class="p">:</span><span class="w">  </span><span class="c"># Vssue 评论仓库的所有者。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">repo</span><span class="p">:</span><span class="w">  </span><span class="c"># Vssue 评论的 GitHub 仓库地址。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">clientId</span><span class="p">:</span><span class="w">  </span><span class="c"># Vssue 的 OAuth 应用 Client ID。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">clientSecret</span><span class="p">:</span><span class="w">  </span><span class="c"># Vssue 的 OAuth 应用 Client Secret。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">autoCreateIssue</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">  </span><span class="c"># 是否自动创建评论议题。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">waline</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">serverURL</span><span class="p">:</span><span class="w">  </span><span class="c"># Waline 评论系统的服务器 URL。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">lang</span><span class="p">:</span><span class="w">  </span><span class="c"># Waline 的语言设置。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">pageview</span><span class="p">:</span><span class="w">  </span><span class="c"># 是否启用页面浏览统计。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">emoji</span><span class="p">:</span><span class="w">  </span><span class="c"># Waline 的 Emoji 表情包地址。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span>- <span class="l">https://unpkg.com/@waline/emojis@1.0.1/weibo</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">requiredMeta</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span>- <span class="l">name </span><span class="w"> </span><span class="c"># 评论时需要填写的字段，用户名。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span>- <span class="l">email </span><span class="w"> </span><span class="c"># 评论时需要填写的字段，电子邮件地址。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span>- <span class="l">url </span><span class="w"> </span><span class="c"># 评论时需要填写的字段，网址。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">locale</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">admin</span><span class="p">:</span><span class="w"> </span><span class="l">Admin </span><span class="w"> </span><span class="c"># Waline 评论系统的管理员名称。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">placeholder</span><span class="p">:</span><span class="w">  </span><span class="c"># Waline 评论框的占位符文本。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">twikoo</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">envId</span><span class="p">:</span><span class="w">  </span><span class="c"># Twikoo 评论系统的环境 ID。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">region</span><span class="p">:</span><span class="w">  </span><span class="c"># Twikoo 评论系统的部署区域。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">path</span><span class="p">:</span><span class="w">  </span><span class="c"># Twikoo 评论系统的路径。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">lang</span><span class="p">:</span><span class="w">  </span><span class="c"># Twikoo 评论系统的语言设置。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">cactus</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">defaultHomeserverUrl</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;https://matrix.cactus.chat:8448&#34;</span><span class="w">  </span><span class="c"># Cactus.Chat 的默认主服务器 URL。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">serverName</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;cactus.chat&#34;</span><span class="w">  </span><span class="c"># Cactus.Chat 的服务器名称。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">siteName</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;&#34;</span><span class="w"> </span><span class="c"># You must insert a unique identifier here matching the one you registered (See https://cactus.chat/docs/getting-started/quick-start/#register-your-site)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c"># Cactus.Chat 的站点名称，需与注册的标识符匹配。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">giscus</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">repo</span><span class="p">:</span><span class="w">  </span><span class="c"># Giscus 评论系统的 GitHub 仓库地址。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">repoID</span><span class="p">:</span><span class="w">  </span><span class="c"># Giscus 仓库的唯一标识符。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">category</span><span class="p">:</span><span class="w">  </span><span class="c"># Giscus 的分类名称。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">categoryID</span><span class="p">:</span><span class="w">  </span><span class="c"># Giscus 分类的唯一标识符。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">mapping</span><span class="p">:</span><span class="w">  </span><span class="c"># Giscus 的议题关联方式。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">lightTheme</span><span class="p">:</span><span class="w">  </span><span class="c"># Giscus 的浅色主题设置。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">darkTheme</span><span class="p">:</span><span class="w">  </span><span class="c"># Giscus 的深色主题设置。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">reactionsEnabled</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">  </span><span class="c"># 是否启用 Giscus 的反应功能。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">emitMetadata</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">  </span><span class="c"># 是否启用 Giscus 的元数据发射功能。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">gitalk</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">owner</span><span class="p">:</span><span class="w">  </span><span class="c"># Gitalk 评论系统的仓库所有者。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">admin</span><span class="p">:</span><span class="w">  </span><span class="c"># Gitalk 评论系统的管理员用户名。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">repo</span><span class="p">:</span><span class="w">  </span><span class="c"># Gitalk 评论的 GitHub 仓库地址。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">clientID</span><span class="p">:</span><span class="w">  </span><span class="c"># Gitalk 的 OAuth 应用 Client ID。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">clientSecret</span><span class="p">:</span><span class="w">  </span><span class="c"># Gitalk 的 OAuth 应用 Client Secret。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">cusdis</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">host</span><span class="p">:</span><span class="w">  </span><span class="c"># Cusdis 评论系统的主机地址。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">id</span><span class="p">:</span><span class="w">  </span><span class="c"># Cusdis 的站点标识符。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">widgets</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">homepage</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">search </span><span class="w"> </span><span class="c"># 首页的小部件，搜索功能。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">archives </span><span class="w"> </span><span class="c"># 首页的小部件，文章归档。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">params</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">limit</span><span class="p">:</span><span class="w"> </span><span class="m">5</span><span class="w">  </span><span class="c"># 显示的归档文章数量。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">categories </span><span class="w"> </span><span class="c"># 首页的小部件，文章分类。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">params</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">limit</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">  </span><span class="c"># 显示的分类数量。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">tag-cloud </span><span class="w"> </span><span class="c"># 首页的小部件，标签云。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">params</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">limit</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">  </span><span class="c"># 显示的标签数量。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">page</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">toc </span><span class="w"> </span><span class="c"># 页面的小部件，显示文章目录。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">opengraph</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">twitter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c"># Your Twitter username</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">site</span><span class="p">:</span><span class="w">  </span><span class="c"># 你的 Twitter 用户名，将在 OpenGraph 元数据中使用。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c"># Available values: summary, summary_large_image</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">card</span><span class="p">:</span><span class="w"> </span><span class="l">summary_large_image </span><span class="w"> </span><span class="c"># Twitter 卡片类型。可以选择 `summary` 或 `summary_large_image`，后者显示大图。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">defaultImage</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">opengraph</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">  </span><span class="c"># 是否为没有特色图片的页面启用默认 OpenGraph 图片。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">local</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">  </span><span class="c"># 是否使用本地图片作为 OpenGraph 图片。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">src</span><span class="p">:</span><span class="w">  </span><span class="c"># 默认 OpenGraph 图片的路径。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">colorScheme</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># Display toggle</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">toggle</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span><span class="c"># 是否在页面上显示颜色模式切换按钮。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># Available values: auto, light, dark</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l">auto </span><span class="w"> </span><span class="c"># 默认的颜色模式。可以选择自动切换（auto），或固定为亮色（light）或暗色（dark）。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">imageProcessing</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">cover</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span><span class="c"># 是否为封面图片启用自动处理功能，例如裁剪、缩放等。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">content</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span><span class="c"># 是否为内容图片启用自动处理功能。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">### Custom menu</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">### See https://stack.jimmycai.com/config/menu</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">### To remove about, archive and search page menu item, remove `menu` field from their FrontMatter</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">menu</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">main</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">  </span><span class="c"># 自定义主菜单的配置，可以在这里添加导航链接。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">social</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l">github </span><span class="w"> </span><span class="c"># 社交链接的标识符，通常用于指定图标。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">GitHub </span><span class="w"> </span><span class="c"># 链接的显示名称。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l">https://github.com/CaiJimmy/hugo-theme-stack </span><span class="w"> </span><span class="c"># GitHub 个人主页的链接。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">params</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l">brand-github </span><span class="w"> </span><span class="c"># 使用的社交图标，这里是 GitHub 图标。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l">twitter </span><span class="w"> </span><span class="c"># 另一个社交链接配置，这里是 Twitter。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Twitter </span><span class="w"> </span><span class="c"># Twitter 链接的显示名称。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l">https://twitter.com </span><span class="w"> </span><span class="c"># Twitter 的链接。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">params</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l">brand-twitter </span><span class="w"> </span><span class="c"># 使用的社交图标，这里是 Twitter 图标。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">related</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">includeNewer</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span><span class="c"># 是否在相关文章中包含较新的文章。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">threshold</span><span class="p">:</span><span class="w"> </span><span class="m">60</span><span class="w">  </span><span class="c"># 相关文章匹配的相似度阈值，范围是0到100。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">toLower</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">  </span><span class="c"># 是否将标签和分类转换为小写。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">indices</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">tags </span><span class="w"> </span><span class="c"># 使用标签作为相关文章的匹配依据。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="m">100</span><span class="w">  </span><span class="c"># 标签匹配的权重值。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">categories </span><span class="w"> </span><span class="c"># 使用分类作为相关文章的匹配依据。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="m">200</span><span class="w">  </span><span class="c"># 分类匹配的权重值。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">markup</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">goldmark</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">renderer</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c">## Set to true if you have HTML content inside Markdown</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">unsafe</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span><span class="c"># 如果 Markdown 中包含 HTML 内容，设置为 true 以允许渲染这些 HTML。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">tableOfContents</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">endLevel</span><span class="p">:</span><span class="w"> </span><span class="m">4</span><span class="w">  </span><span class="c"># 目录生成时的最大标题级别。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">ordered</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span><span class="c"># 目录项是否使用有序列表。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">startLevel</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">  </span><span class="c"># 目录生成时的起始标题级别。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">highlight</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">noClasses</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">  </span><span class="c"># 语法高亮时是否禁用 CSS 类名。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">codeFences</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span><span class="c"># 是否启用代码块语法高亮。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">guessSyntax</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span><span class="c"># 是否自动猜测代码块的语言进行语法高亮。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">lineNoStart</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">  </span><span class="c"># 代码行号的起始值。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">lineNos</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span><span class="c"># 是否在代码块中显示行号。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">lineNumbersInTable</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span><span class="c"># 是否在表格样式中显示行号。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">tabWidth</span><span class="p">:</span><span class="w"> </span><span class="m">4</span><span class="w">  </span><span class="c"># 代码块中 Tab 的宽度（空格数）。</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>更多相关配置参见<a class="link" href="https://stack.jimmycai.com/"  target="_blank" rel="noopener"
+    >官网</a>，例如网站字体配置、自定义页眉或页脚等。</p>
+<h3 id="撰写文章">撰写文章
+</h3><p>在 <code>你的站点名称/content/post</code> 文件夹下新建文件夹，在新建文件夹中创建 <code>index.md</code> 文件，就代表创建一篇新文章了。</p>
+<p>可以在 <code>你的站点名称</code> 页面打开并通过命令行创建新文章，命令如下： <code>hugo new content post/新文章标题/index.md</code>
+<img src="https://img.brume.top/file/344b53eaf1d7a9800e8ab.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="#"
+	
+	
+></p>
+<p>之后通过 VS Code 或其他编辑器，用 markdown 语言写文章。</p>
+<p>在使用 hugo 命令生成的文章的最上面，都有一块被 <code>+++</code> 或 <code>---</code> 包裹出来的区域，它的官方名称是 &ldquo;Front matter&rdquo;， 用以指定文章的各项属性。下面是我在 stack 主题的一篇示例文章中摘取的 Front Matter 片段，并写出了注释：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">+++
+</span></span><span class="line"><span class="cl">author = &#34;Hugo Authors&#34;  # 作者名称，用于标识文章的创作者。
+</span></span><span class="line"><span class="cl">title = &#34;Markdown Syntax Guide&#34;  # 文章标题，将显示在页面和导航中。
+</span></span><span class="line"><span class="cl">date = &#34;2019-03-11&#34;  # 文章的发布日期，用于排序和展示。
+</span></span><span class="line"><span class="cl">description = &#34;Sample article showcasing basic Markdown syntax and formatting for HTML elements.&#34;  # 文章的简短描述，通常用于摘要或 SEO。
+</span></span><span class="line"><span class="cl">tags = [
+</span></span><span class="line"><span class="cl">    &#34;markdown&#34;,  # 文章的标签，用于分类和搜索。标签是灵活的，可以添加多个。
+</span></span><span class="line"><span class="cl">    &#34;css&#34;,
+</span></span><span class="line"><span class="cl">    &#34;html&#34;,
+</span></span><span class="line"><span class="cl">    &#34;themes&#34;,
+</span></span><span class="line"><span class="cl">]
+</span></span><span class="line"><span class="cl">categories = [
+</span></span><span class="line"><span class="cl">    &#34;themes&#34;,  # 文章的类别，用于组织和过滤内容。每篇文章可以属于一个或多个类别。
+</span></span><span class="line"><span class="cl">    &#34;syntax&#34;,
+</span></span><span class="line"><span class="cl">]
+</span></span><span class="line"><span class="cl">series = [&#34;Themes Guide&#34;]  # 文章系列，通常用于将相关文章组织在一起，例如教程或主题指南系列。
+</span></span><span class="line"><span class="cl">aliases = [&#34;migrate-from-jekyl&#34;]  # 别名，用于创建文章的旧路径重定向到新路径。例如，当迁移文章时使用。
+</span></span><span class="line"><span class="cl">image = &#34;pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg&#34;  # 文章的封面图片路径，用于展示文章时的视觉效果。
+</span></span><span class="line"><span class="cl">+++
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Hugo 自带一个自动生成的 Front Matter 模板，但实际上，Hugo 支持的 Front Matter 字段远比默认模板提供的要丰富。以下是一些常用字段及其作用，你可以根据需要模仿原模板进行编写，或者编辑 archetypes 文件夹下的 default.md 文件，以自定义新的 Front Matter 模板。使用 hugo new 命令创建新文章时，Hugo 会根据 archetypes 目录下的模板自动生成 Front Matter。</p>
+<h4 id="常用-front-matter-字段说明">常用 Front Matter 字段说明
+</h4><ul>
+<li><code>title</code> ：文章标题。自动生成的标题与文件名保持一致。</li>
+<li><code>date</code>：文章创建日期。默认生成的日期为文件创建时的日期。</li>
+<li><code>lastmod</code>：文章最后更新日期。</li>
+<li><code>description</code>：文章简要描述，用于摘要或 SEO 优化。</li>
+<li><code>categories</code>：文章分类。</li>
+<li><code>tags</code>：文章标签。</li>
+<li><code>image</code>：封面图片。</li>
+<li><code>draft</code>：是否为草稿。如果设置为 true，Hugo 将不会编译该文件，文章也不会在页面中显示。</li>
+<li><code>hidden</code>：是否隐藏文章。与 draft 的区别在于，设置为 true 的文章仍然存在，只是不会在页面中显示，但可以通过正确的网址访问。</li>
+</ul>
+<p>当然，并不是所有 Front Matter 属性在文章中都要出现。只要保证文章具有默认的属性，文章通常是不会出现 bugs 的。</p>
+<p>撰写页面、编辑 categories 和 tags 的方法与之基本相似，这里就不赘述了。</p>
+<h3 id="部署博客">部署博客
+</h3><p>在博客内容撰写完毕以后，进入部署环节。</p>
+<p>同样的，Hugo 官方也提供了 <a class="link" href="https://gohugo.io/hosting-and-deployment/"  target="_blank" rel="noopener"
+    >部署</a> 的相关教程。对于体积极小的静态页面来说，我不太认同单独将它配置在云服务器上。我推荐部署在 Vercel, Cloudflare Pages, Github Pages, Gitlab Pages, Netlify 等平台上。由于篇幅所限，我只写出部署至 Github Pages 并部署到 Vercel 的方法。</p>
+<p>我在部署之前，曾经在互联网上查找过部署在各大平台上的 Hugo 博客，并通过测速网站进行速度测试。对各个主题之间的差异忽略不计，结果如下：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:center">部署平台</th>
+<th style="text-align:center">中国最快/最慢时间</th>
+<th style="text-align:center">海外最快/最慢时间</th>
+<th style="text-align:center">中国/海外平均时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Github Pages</td>
+<td style="text-align:center">内蒙古联通 0.304s / 湖北武汉电信 10.136s</td>
+<td style="text-align:center">德国法兰克福 0.018s / 南非 2.978s</td>
+<td style="text-align:center">1.829s / 0.541s</td>
+</tr>
+<tr>
+<td style="text-align:center">Vercel</td>
+<td style="text-align:center">中国台湾 0.355s (大陆地区是浙江杭州移动 0.140s) / 黑龙江哈尔滨电信 3.088s</td>
+<td style="text-align:center">美国阿什本 0.050s / 美国洛杉矶② 1.602s</td>
+<td style="text-align:center">0.865s / 0.526s</td>
+</tr>
+<tr>
+<td style="text-align:center">Cloudflare Pages</td>
+<td style="text-align:center">中国台湾 0.147s (大陆地区是上海移动 0.436s)/贵州贵阳移动 11.199s</td>
+<td style="text-align:center">美国阿什本 0.109s / 新加坡 2.133s</td>
+<td style="text-align:center">1.400s / 0.429s</td>
+</tr>
+<tr>
+<td style="text-align:center">我的网站(Vercel + Github Pages)</td>
+<td style="text-align:center">中国香港 0.054s (大陆地区是江苏苏州移动 0.196s)/ 福建厦门电信 7.119s</td>
+<td style="text-align:center">德国法兰克福 0.038s / 加拿大多伦多 0.732s</td>
+<td style="text-align:center">0.789s / 0.436s</td>
+</tr>
+</tbody>
+</table></div>
+<p>因此，我推荐通过部署在 Github Pages 上，再通过 Vercel 的将 源文件部署，并绑定域名的方式。</p>
+<p>至于为什么是 Github Pages 而不是随便建一个 Github 仓库，因为包括官网在内的网上的大多数方法都基于 Github Pages 的。</p>
+<p>注意，如果要部署到 Vercel 上，一定要有一个自有域名。<del>否则你必须每次都开全局代理访问你的博客</del></p>
+<p>但是 Github Pages 禁止百度抓取网页，对 SEO 不友好。所以建议再将 Github 仓库部署至 Vercel.</p>
+<h3 id="部署至-github-pages">部署至 Github Pages
+</h3><p>新建一个 Github 仓库，仓库名为 <code>你的名字.github.io</code>，权限设置为 public.</p>
+<p>前往 Setting/Pages/Branch 选择 main 分支，并保存。</p>
+<p>在本地的博客文件夹中执行 hugo 命令，会生成 Public 文件夹。这是将要上传至 Github 仓库的文件夹，包含这个博客的全部静态资源。
+<img src="https://img.brume.top/file/3b5d1d2ec9e7af1dde97f.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="#"
+	
+	
+></p>
+<p>接着输入以下命令，用于推送仓库至 Github Pages 上（若第一次上传，建议先提前输入账号密码，避免之后被绕得焦头烂额，方法见下下）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span>  public/ <span class="c1"># 进入 public 文件夹</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git init <span class="c1"># 初始化当前文件夹（此处就是 public 文件夹）为一个本地 git 仓库</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git remote add origin git@github.com:username/username.github.io
+</span></span><span class="line"><span class="cl"><span class="c1"># 关联远程仓库。</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 远程仓库地址（git@github.com:username/username.github.io）</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 也可以进入 Github 仓库-&gt; Code -&gt; SSH 复制远程仓库地址</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git add . <span class="c1"># 将当前文件夹的所有文件加入到暂存区</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;My first commit&#34;</span> <span class="c1"># 把相关文件提交到本地仓库</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git push origin main <span class="c1"># 把相关文件推送到远程仓库的 main 分支</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>第一次 push 代码之前需要进行如下配置，之后 Git 会主动请求关联 Github 账户。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git config --global user.name <span class="s2">&#34;你的 Github 用户名&#34;</span>
+</span></span><span class="line"><span class="cl">git config --global user.email <span class="s2">&#34;你注册 Github 的邮箱&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我建议在推送仓库的时候打开全局代理，不然 Github 时不时掉一下线，非常烦人！</p>
+<p>还有一种替代 SSH 的方法，即下载 Github Desktop，在客户端中进行代码的上传。</p>
+<p>Push 文件时经常会遇到报错，我建议仔细报错信息，看看是因为什么原因导致报错的，如果不清楚，可以问问 ChatGPT. 我曾经经历过的报错，大多都是找 GPT 帮忙，它会耐心地指出我的错误，并详细地告诉我解决方法。</p>
+<p>上传成功并等待部署完成后，可以访问 https://{username}.github.io/ 检查无误后即可进行下一步操作。</p>
+<h3 id="部署至-vercel-并绑定域名">部署至 Vercel 并绑定域名
+</h3><p>你需要拥有一个自己的域名才能部署至 Vercel. Vercel 分配的子域名在大陆无法访问。</p>
+<p>进入 Vercel 官网并登录，建议通过 Github 登录，以更方便地关联 Github 仓库。</p>
+<p>点击 “Add New” 再点击 “Project” 。在 “Import Git Repository” 中找到你上传到 Github 上的仓库。点击 “Import”. “Configure Project” 中的所有选项保持默认，点击 “Deploy”.等待大约十秒钟之后部署完成，会出现一个满屏彩带的页面。</p>
+<p>Just like this:
+<img src="https://img.brume.top/file/e1fbfa4f16fa91e88b19e.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="欢迎页面"
+	
+	
+></p>
+<p>之后直奔主题，点击右侧的 “Add Domain”.进入 “Domain” 页面。
+<img src="https://img.brume.top/file/baa328f7c9e5c7347d5b1.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="#"
+	
+	
+>
+在搜索框内输入域名，选择合适的选项，并点击 “Add” ，按照要求添加 DNS 记录，等待 Vercel 验证通过并自动配置完 SSL 证书后即可访问。</p>
+<p>这里有个通常容易忽略的点，即在 Vercel 上部署的项目是强制 https 的，如果在 Cloudflare 或其他平台再次设置了强制 https，访问时会导致重定向次数过多，报出&quot;ERR_TOO_MANY_REDIRECTS&quot; 错误。我的解决方法是关闭 Cloudflare 上的相关配置，如果子域名需要强制 https，可以通过 .htaccess 文件实现。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/hugo/">Hugo</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/a-final-gaze-at-typecho/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">对 Typecho 最后的凝望</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/a-comparison-between-typecho-and-hugo/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://img.brume.top/file/0a665c213503e3f8d2d41.png" loading="lazy" data-key="a-comparison-between-typecho-and-hugo" data-hash="https://img.brume.top/file/0a665c213503e3f8d2d41.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Hugo与Typecho之对比</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/web-2-pwa/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://dongli.pages.dev/file/182760af93f035e9f2c31.jpg" loading="lazy" data-key="Web-2-PWA" data-hash="https://dongli.pages.dev/file/182760af93f035e9f2c31.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Web 2 Pwa</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2022 - 
+        
+        2024 春树暮云
+    </section>
+    
+    <section class="powerby">
+        
+            <a href="https://icp.gov.moe/?keyword=20240008" target="_blank">萌ICP备20240008号</a> <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
