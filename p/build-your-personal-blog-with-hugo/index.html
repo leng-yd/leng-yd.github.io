@@ -93,8 +93,8 @@
                     
                     
                         
-                        <img src="/img/avatar_hu13739649187745961479.png" width="150"
-                            height="150" class="site-logo" loading="lazy" alt="Avatar">
+                        <img src="/img/avatar_hu13739649187745961479.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
                 </a>
@@ -149,6 +149,20 @@
 
 
 
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.travellings.cn/go.html'
+                        target="_blank"
+                        title="Travelling"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rocket"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" /><path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" /><path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg>
                         
                     </a>
                 </li>
@@ -329,6 +343,8 @@
         <li><a href="#部署博客">部署博客</a></li>
         <li><a href="#部署至-github-pages">部署至 Github Pages</a></li>
         <li><a href="#部署至-vercel-并绑定域名">部署至 Vercel 并绑定域名</a></li>
+        <li><a href="#可选-github-action-自动部署">(可选) Github Action 自动部署</a></li>
+        <li><a href="#end">End</a></li>
       </ol>
     </li>
   </ol>
@@ -411,7 +427,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 13 分钟
+                    阅读时长: 14 分钟
                 </time>
             </div>
         
@@ -1265,6 +1281,166 @@
 >
 在搜索框内输入域名，选择合适的选项，并点击 “Add” ，按照要求添加 DNS 记录，等待 Vercel 验证通过并自动配置完 SSL 证书后即可访问。</p>
 <p>这里有个通常容易忽略的点，即在 Vercel 上部署的项目是强制 https 的，如果在 Cloudflare 或其他平台再次设置了强制 https，访问时会导致重定向次数过多，报出&quot;ERR_TOO_MANY_REDIRECTS&quot; 错误。我的解决方法是关闭 Cloudflare 上的相关配置，如果子域名需要强制 https，可以通过 .htaccess 文件实现。</p>
+<h3 id="可选-github-action-自动部署">(可选) Github Action 自动部署
+</h3><blockquote>
+<p>如果没有进行自动部署，博客也能正常访问，但是我们每次更新博客时，都需要在已经搭建好环境的电脑上进行、都要手动进行 Hugo 编译，再推送 Public 文件夹到 Github 仓库。如果想让整个写作+发布流程更加快捷，不妨试试自动部署。</p>
+</blockquote>
+<p>在 Github 上创建一个新的仓库,权限建议设置为“Private”.它将被用来用于存放 Hugo 的源文件，即目录为 “你的博客名称” 下的所有文件夹和文件。如下图。我自定义的仓库名为“Hugo”
+<img src="https://img.brume.top/file/986979f3ddffa54e21470.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="创建仓库"
+	
+	
+></p>
+<p>前往本仓库的 Settings/Developer Settings/Personal access tokens , 点击 “Generate new token (classic)” 创建一个 token.
+<img src="https://img.brume.top/file/6862a974a695ac34a0248.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="创建Token"
+	
+	
+></p>
+<p>&ldquo;Expiration&rdquo; 为 token 过期时间，可自定义。记得选择下方的 “repo” 和 “workflow” 选项。</p>
+<p>前往本仓库的 Settings/Secrets and variables/Actions 将生成的 Token 保存在仓库的环境变量中。
+<img src="https://img.brume.top/file/7afdd2c21c60890c5c1bd.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="环境变量"
+	
+	
+></p>
+<p>返回本地的 “你的博客名” 文件夹，在其中新建 “.Github” 文件夹，在该文件夹中创建 “workflows” 文件夹，在该文件夹中新建 “deploy.yaml” 文件。复制以下代码到该文件中：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">deploy</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># 代码提交到main分支时触发github action</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">on</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">main</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">jobs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">deploy</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu-latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Checkout</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/checkout@v4</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">fetch-depth</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Setup Hugo</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">peaceiris/actions-hugo@v3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">hugo-version</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;latest&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">extended</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Build Web</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">hugo -D</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Deploy Web</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">peaceiris/actions-gh-pages@v4</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">PERSONAL_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l">${{ secrets.你的 Token 变量名 }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">EXTERNAL_REPOSITORY</span><span class="p">:</span><span class="w"> </span><span class="l">用户名/仓库名</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">PUBLISH_BRANCH</span><span class="p">:</span><span class="w"> </span><span class="l">main</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">PUBLISH_DIR</span><span class="p">:</span><span class="w"> </span><span class="l">./public</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">commit_message</span><span class="p">:</span><span class="w"> </span><span class="l">auto deploy</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>在 “你的博客名” 文件夹中新建 “.gitignore” 文件，用来忽略提交不必要的文件或文件夹。在其中输入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">public
+</span></span><span class="line"><span class="cl">resources
+</span></span><span class="line"><span class="cl">.hugo_build.lock
+</span></span><span class="line"><span class="cl">hugo.exe
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>将 Hugo 源文件上传至仓库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;注释&#34;</span>
+</span></span><span class="line"><span class="cl">git branch -M main
+</span></span><span class="line"><span class="cl">git remote add origin git@github.com:用户名/仓库名.git
+</span></span><span class="line"><span class="cl">git -u push origin main
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>提交完成之后前往 “Actions” 页面查看部署情况。下图是我发稿前的状况。
+<img src="https://img.brume.top/file/54ba77c646c452b88db31.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="部署情况"
+	
+	
+></p>
+<h3 id="end">End
+</h3><p>一切正常的话，就可以愉快地享用你的个人博客啦！当然，部署完成后还可以进行主题美化、评论区的配置等一系列繁杂的操作。不过，瞎折腾也不是没有意义的；或许，搭建博客本身就是意义。</p>
 
 </section>
 
@@ -1363,6 +1539,25 @@
      
     
         
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo","https://unpkg.com/@waline/emojis@1.2.0/bmoji","https://unpkg.com/@waline/emojis@1.2.0/tieba","https://unpkg.com/@waline/emojis@1.2.0/qq","https://unpkg.com/@waline/emojis@1.2.0/alus","https://unpkg.com/@waline/emojis@1.1.0/bilibili","https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs"],"lang":"zh-cn","locale":{"admin":"Admin","placeholder":null},"requiredMeta":["name","email"],"serverURL":"https://waline.brume.top"});
+</script>
+
     
 
     <footer class="site-footer">
