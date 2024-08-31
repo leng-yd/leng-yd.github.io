@@ -2,58 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Tags on 春树暮云</title>
-        <link>https://leng-yd.github.io/tags/</link>
+        <link>https://brume.top/tags/</link>
         <description>Recent content in Tags on 春树暮云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>春树暮云</copyright>
-        <lastBuildDate>Wed, 28 Aug 2024 21:35:54 +0800</lastBuildDate><atom:link href="https://leng-yd.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 30 Aug 2024 18:12:32 +0800</lastBuildDate><atom:link href="https://brume.top/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Hugo</title>
+        <link>https://brume.top/tags/hugo/</link>
+        <pubDate>Fri, 30 Aug 2024 18:12:32 +0800</pubDate>
+        
+        <guid>https://brume.top/tags/hugo/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Typecho</title>
-        <link>https://leng-yd.github.io/tags/typecho/</link>
+        <link>https://brume.top/tags/typecho/</link>
         <pubDate>Wed, 28 Aug 2024 21:35:54 +0800</pubDate>
         
-        <guid>https://leng-yd.github.io/tags/typecho/</guid>
+        <guid>https://brume.top/tags/typecho/</guid>
         <description></description>
         </item>
         <item>
         <title>游记</title>
-        <link>https://leng-yd.github.io/tags/travels/</link>
+        <link>https://brume.top/tags/travels/</link>
         <pubDate>Sat, 06 Jul 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://leng-yd.github.io/tags/travels/</guid>
-        <description>&lt;img src="https://leng-yd.github.io/tags/travels/travels.webp" alt="Featured image of post 游记" /&gt;</description>
+        <guid>https://brume.top/tags/travels/</guid>
+        <description>&lt;img src="https://brume.top/tags/travels/travels.webp" alt="Featured image of post 游记" /&gt;</description>
         </item>
         <item>
         <title>年度总结</title>
-        <link>https://leng-yd.github.io/tags/annual-summary/</link>
+        <link>https://brume.top/tags/annual-summary/</link>
         <pubDate>Wed, 31 Jan 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://leng-yd.github.io/tags/annual-summary/</guid>
-        <description>&lt;img src="https://leng-yd.github.io/tags/annual-summary/annual-summary.webp" alt="Featured image of post 年度总结" /&gt;</description>
+        <guid>https://brume.top/tags/annual-summary/</guid>
+        <description>&lt;img src="https://brume.top/tags/annual-summary/annual-summary.webp" alt="Featured image of post 年度总结" /&gt;</description>
         </item>
         <item>
         <title>PWA</title>
-        <link>https://leng-yd.github.io/tags/pwa/</link>
+        <link>https://brume.top/tags/pwa/</link>
         <pubDate>Fri, 18 Aug 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://leng-yd.github.io/tags/pwa/</guid>
-        <description>&lt;img src="https://leng-yd.github.io/tags/pwa/pwa.webp" alt="Featured image of post PWA" /&gt;</description>
+        <guid>https://brume.top/tags/pwa/</guid>
+        <description>&lt;img src="https://brume.top/tags/pwa/pwa.webp" alt="Featured image of post PWA" /&gt;</description>
         </item>
         <item>
         <title>二维码</title>
-        <link>https://leng-yd.github.io/tags/qrcode/</link>
+        <link>https://brume.top/tags/qrcode/</link>
         <pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://leng-yd.github.io/tags/qrcode/</guid>
-        <description>&lt;img src="https://leng-yd.github.io/tags/qrcode/qrcode.jpg" alt="Featured image of post 二维码" /&gt;</description>
+        <guid>https://brume.top/tags/qrcode/</guid>
+        <description>&lt;img src="https://brume.top/tags/qrcode/qrcode.jpg" alt="Featured image of post 二维码" /&gt;</description>
         </item>
         <item>
         <title>网络安全</title>
-        <link>https://leng-yd.github.io/tags/cybersecurity/</link>
+        <link>https://brume.top/tags/cybersecurity/</link>
         <pubDate>Sat, 01 Jul 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://leng-yd.github.io/tags/cybersecurity/</guid>
-        <description>&lt;img src="https://leng-yd.github.io/tags/cybersecurity/Cybersecurity.webp" alt="Featured image of post 网络安全" /&gt;</description>
+        <guid>https://brume.top/tags/cybersecurity/</guid>
+        <description>&lt;img src="https://brume.top/tags/cybersecurity/Cybersecurity.webp" alt="Featured image of post 网络安全" /&gt;</description>
         </item>
         
     </channel>

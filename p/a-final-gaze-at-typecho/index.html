@@ -4,11 +4,11 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="一篇 Typecho 主题制作总结，记录了自己创作或搜集到的各种实用的 Typecho 代码">
 <title>对 Typecho 最后的凝望</title>
 
-<link rel='canonical' href='https://leng-yd.github.io/p/a-final-gaze-at-typecho/'>
+<link rel='canonical' href='https://brume.top/p/a-final-gaze-at-typecho/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="对 Typecho 最后的凝望">
 <meta property='og:description' content="一篇 Typecho 主题制作总结，记录了自己创作或搜集到的各种实用的 Typecho 代码">
-<meta property='og:url' content='https://leng-yd.github.io/p/a-final-gaze-at-typecho/'>
+<meta property='og:url' content='https://brume.top/p/a-final-gaze-at-typecho/'>
 <meta property='og:site_name' content='春树暮云'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Typecho' /><meta property='article:published_time' content='2024-08-28T21:35:54&#43;08:00'/><meta property='article:modified_time' content='2024-08-28T21:35:54&#43;08:00'/>
 <meta name="twitter:title" content="对 Typecho 最后的凝望">
@@ -38,6 +38,16 @@
         const e = document.createElement("link");
         e.href = "https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap", e.type = "text/css", e.rel = "stylesheet", document.head.appendChild(e)
     }()
+</script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H43W28NQ4H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H43W28NQ4H');
 </script>
     </head>
     <body class="
@@ -82,8 +92,8 @@
                     
                     
                         
-                        <img src="/img/avatar_hu13739649187745961479.png" width="300"
-                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                        <img src="/img/avatar_hu13739649187745961479.png" width="150"
+                            height="150" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
                 </a>
@@ -422,14 +432,14 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">is_ajax</span><span class="p">()</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">is_ajax</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nx">$_SERVER</span><span class="p">[</span><span class="s1">&#39;HTTP_X_REQUESTED_WITH&#39;</span><span class="p">]))</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;xmlhttprequest&#39;</span> <span class="o">==</span> <span class="nx">strtolower</span><span class="p">(</span><span class="nx">$_SERVER</span><span class="p">[</span><span class="s1">&#39;HTTP_X_REQUESTED_WITH&#39;</span><span class="p">]))</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;HTTP_X_REQUESTED_WITH&#39;</span><span class="p">]))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;xmlhttprequest&#39;</span> <span class="o">==</span> <span class="nx">strtolower</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;HTTP_X_REQUESTED_WITH&#39;</span><span class="p">]))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -461,23 +471,23 @@
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">page</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">$body</span> <span class="o">=</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">opera</span><span class="p">)</span> <span class="o">?</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">compatMode</span> <span class="o">==</span> <span class="s2">&#34;CSS1Compat&#34;</span> <span class="o">?</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;html&#39;</span><span class="p">)</span> <span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">))</span> <span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;html,body&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#blog_load_more&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#spinner&#39;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl">    <span class="k">var</span> <span class="nx">page</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">var</span> <span class="nv">$body</span> <span class="o">=</span> <span class="p">(</span><span class="nx">window</span><span class="o">.</span><span class="nx">opera</span><span class="p">)</span> <span class="o">?</span> <span class="p">(</span><span class="nx">document</span><span class="o">.</span><span class="nx">compatMode</span> <span class="o">==</span> <span class="s2">&#34;CSS1Compat&#34;</span> <span class="o">?</span> <span class="err">$</span><span class="p">(</span><span class="s1">&#39;html&#39;</span><span class="p">)</span> <span class="o">:</span> <span class="err">$</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">))</span> <span class="o">:</span> <span class="err">$</span><span class="p">(</span><span class="s1">&#39;html,body&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="err">$</span><span class="p">(</span><span class="s1">&#39;#blog_load_more&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">click</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="err">$</span><span class="p">(</span><span class="k">this</span><span class="p">)</span><span class="o">.</span><span class="nx">hide</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="err">$</span><span class="p">(</span><span class="s1">&#39;#spinner&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">show</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="err">$</span><span class="o">.</span><span class="nx">ajax</span><span class="p">({</span>
 </span></span><span class="line"><span class="cl">            <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;get&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">url</span><span class="o">:</span> <span class="nx">SITE</span><span class="p">.</span><span class="nx">default_url</span> <span class="o">+</span> <span class="s1">&#39;/page/&#39;</span> <span class="o">+</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">page</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">XMLHttpRequest</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">url</span><span class="o">:</span> <span class="nx">SITE</span><span class="o">.</span><span class="nx">default_url</span> <span class="o">+</span> <span class="s1">&#39;/page/&#39;</span> <span class="o">+</span> <span class="nx">parseInt</span><span class="p">(</span><span class="nx">page</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">success</span><span class="o">:</span> <span class="k">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">XMLHttpRequest</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">                <span class="nx">page</span><span class="o">++</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.w-blog-list&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#spinner&#39;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#blog_load_more&#39;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="err">$</span><span class="p">(</span><span class="s1">&#39;.w-blog-list&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="err">$</span><span class="p">(</span><span class="s1">&#39;#spinner&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">hide</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="err">$</span><span class="p">(</span><span class="s1">&#39;#blog_load_more&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">show</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">            <span class="p">},</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">MLHttpRequest</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#spinner&#39;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">$</span><span class="p">.</span><span class="nx">jGrowl</span><span class="p">(</span><span class="s1">&#39;Network Error&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">error</span><span class="o">:</span> <span class="k">function</span><span class="p">(</span><span class="nx">MLHttpRequest</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="err">$</span><span class="p">(</span><span class="s1">&#39;#spinner&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">hide</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="err">$</span><span class="o">.</span><span class="nx">jGrowl</span><span class="p">(</span><span class="s1">&#39;Network Error&#39;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">            <span class="p">}</span>
 </span></span><span class="line"><span class="cl">        <span class="p">});</span>
 </span></span><span class="line"><span class="cl">    <span class="p">});</span>
@@ -498,14 +508,14 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">site_data</span><span class="p">()</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">site_data</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">$array</span> <span class="o">=</span> <span class="nx">array</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;site_url&#39;</span>         <span class="p">=&gt;</span> <span class="nx">Helper</span><span class="o">::</span><span class="nx">options</span><span class="p">()</span><span class="o">-&gt;</span><span class="nx">siteUrl</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;default_url&#39;</span>      <span class="p">=&gt;</span> <span class="nx">Helper</span><span class="o">::</span><span class="nx">options</span><span class="p">()</span><span class="o">-&gt;</span><span class="nx">siteUrl</span> <span class="p">.</span> <span class="s1">&#39;index.php&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;theme_images_url&#39;</span> <span class="p">=&gt;</span> <span class="nx">Helper</span><span class="o">::</span><span class="nx">options</span><span class="p">()</span><span class="o">-&gt;</span><span class="nx">themeUrl</span> <span class="p">.</span> <span class="s1">&#39;/assets/images/&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$array</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;site_url&#39;</span>         <span class="o">=&gt;</span> <span class="nx">Helper</span><span class="o">::</span><span class="na">options</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">siteUrl</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;default_url&#39;</span>      <span class="o">=&gt;</span> <span class="nx">Helper</span><span class="o">::</span><span class="na">options</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">siteUrl</span> <span class="o">.</span> <span class="s1">&#39;index.php&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;theme_images_url&#39;</span> <span class="o">=&gt;</span> <span class="nx">Helper</span><span class="o">::</span><span class="na">options</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">themeUrl</span> <span class="o">.</span> <span class="s1">&#39;/assets/images/&#39;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">echo</span> <span class="nx">json_encode</span><span class="p">(</span><span class="nx">$array</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">echo</span> <span class="nx">json_encode</span><span class="p">(</span><span class="nv">$array</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -517,10 +527,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;text/javascript&#34;</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">SITE</span> <span class="o">=</span> <span class="o">&lt;?</span><span class="nx">php</span> <span class="nx">site_data</span><span class="p">()</span><span class="o">?&gt;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/script&gt;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;text/javascript&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="k">var</span> <span class="nx">SITE</span> <span class="o">=</span> <span class="o">&lt;?</span><span class="nx">php</span> <span class="nx">site_data</span><span class="p">()</span><span class="cp">?&gt;</span><span class="err">;
+</span></span></span><span class="line"><span class="cl"><span class="err">&lt;/script&gt;
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>此处的 SITE 就是一个 JSON 对象，可以直接用了。</p>
 <h3 id="自定义的过滤器函数">自定义的过滤器函数
@@ -539,14 +549,14 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">add_filter</span><span class="p">(</span><span class="s1">&#39;the_content&#39;</span><span class="p">,</span> <span class="s1">&#39;fancybox_replace&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">fancybox_replace</span><span class="p">(</span><span class="nx">$content</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">add_filter</span><span class="p">(</span><span class="s1">&#39;the_content&#39;</span><span class="p">,</span> <span class="s1">&#39;fancybox_replace&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">fancybox_replace</span><span class="p">(</span><span class="nv">$content</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">global</span> <span class="nx">$post</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">$pattern</span>     <span class="o">=</span> <span class="s2">&#34;/&lt;a(.*?)href=(&#39;|\&#34;)([^&gt;]*).(bmp|gif|jpeg|jpg|png)(&#39;|\&#34;)(.*?)&gt;(.*?)&lt;\/a&gt;/i&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">$replacement</span> <span class="o">=</span> <span class="s1">&#39;&lt;a$1href=$2$3.$4$5 target=&#34;_blank&#34; rel=&#34;fancybox&#34;$6&gt;$7&lt;/a&gt;&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">$content</span>     <span class="o">=</span> <span class="nx">preg_replace</span><span class="p">(</span><span class="nx">$pattern</span><span class="p">,</span> <span class="nx">$replacement</span><span class="p">,</span> <span class="nx">$content</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">$content</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">global</span> <span class="nv">$post</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$pattern</span>     <span class="o">=</span> <span class="s2">&#34;/&lt;a(.*?)href=(&#39;|</span><span class="se">\&#34;</span><span class="s2">)([^&gt;]*).(bmp|gif|jpeg|jpg|png)(&#39;|</span><span class="se">\&#34;</span><span class="s2">)(.*?)&gt;(.*?)&lt;\/a&gt;/i&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$replacement</span> <span class="o">=</span> <span class="s1">&#39;&lt;a$1href=$2$3.$4$5 target=&#34;_blank&#34; rel=&#34;fancybox&#34;$6&gt;$7&lt;/a&gt;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$content</span>     <span class="o">=</span> <span class="nx">preg_replace</span><span class="p">(</span><span class="nv">$pattern</span><span class="p">,</span> <span class="nv">$replacement</span><span class="p">,</span> <span class="nv">$content</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nv">$content</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -562,10 +572,10 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">themeInit</span><span class="p">(</span><span class="nx">$archive</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">themeInit</span><span class="p">(</span><span class="nv">$archive</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">$archive</span><span class="o">-&gt;</span><span class="nx">is</span><span class="p">(</span><span class="s1">&#39;single&#39;</span><span class="p">))</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">$archive</span><span class="o">-&gt;</span><span class="nx">content</span> <span class="o">=</span> <span class="nx">fancybox_replace</span><span class="p">(</span><span class="nx">$archive</span><span class="o">-&gt;</span><span class="nx">content</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$archive</span><span class="o">-&gt;</span><span class="na">is</span><span class="p">(</span><span class="s1">&#39;single&#39;</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$archive</span><span class="o">-&gt;</span><span class="na">content</span> <span class="o">=</span> <span class="nx">fancybox_replace</span><span class="p">(</span><span class="nv">$archive</span><span class="o">-&gt;</span><span class="na">content</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -742,10 +752,10 @@
 </span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">is_mobile</span><span class="p">()</span>
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">is_mobile</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">$user_agent</span>     <span class="o">=</span> <span class="nx">$_SERVER</span><span class="p">[</span><span class="s1">&#39;HTTP_USER_AGENT&#39;</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">$mobile_browser</span> <span class="o">=</span> <span class="nx">array</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$user_agent</span>     <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;HTTP_USER_AGENT&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$mobile_browser</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl">        <span class="s2">&#34;mqqbrowser&#34;</span><span class="p">,</span> <span class="c1">//手机QQ浏览器
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="s2">&#34;opera mobi&#34;</span><span class="p">,</span> <span class="c1">//手机opera
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="s2">&#34;juc&#34;</span><span class="p">,</span> <span class="s2">&#34;iuc&#34;</span><span class="p">,</span> <span class="c1">//uc浏览器
@@ -756,14 +766,14 @@
 </span></span><span class="line"><span class="cl">        <span class="s2">&#34;lg&#34;</span><span class="p">,</span> <span class="s2">&#34;lg-&#34;</span><span class="p">,</span> <span class="s2">&#34;lge-&#34;</span><span class="p">,</span> <span class="s2">&#34;lge&#34;</span><span class="p">,</span> <span class="s2">&#34;mobi&#34;</span><span class="p">,</span> <span class="s2">&#34;moto&#34;</span><span class="p">,</span> <span class="s2">&#34;nokia&#34;</span><span class="p">,</span> <span class="s2">&#34;phone&#34;</span><span class="p">,</span> <span class="s2">&#34;samsung&#34;</span><span class="p">,</span> <span class="s2">&#34;sony&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="s2">&#34;symbian&#34;</span><span class="p">,</span> <span class="s2">&#34;tablet&#34;</span><span class="p">,</span> <span class="s2">&#34;tianyu&#34;</span><span class="p">,</span> <span class="s2">&#34;wap&#34;</span><span class="p">,</span> <span class="s2">&#34;xda&#34;</span><span class="p">,</span> <span class="s2">&#34;xde&#34;</span><span class="p">,</span> <span class="s2">&#34;zte&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">$is_mobile</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">foreach</span> <span class="p">(</span><span class="nx">$mobile_browser</span> <span class="nx">as</span> <span class="nx">$device</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">stristr</span><span class="p">(</span><span class="nx">$user_agent</span><span class="p">,</span> <span class="nx">$device</span><span class="p">))</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">$is_mobile</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$is_mobile</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$mobile_browser</span> <span class="k">as</span> <span class="nv">$device</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">stristr</span><span class="p">(</span><span class="nv">$user_agent</span><span class="p">,</span> <span class="nv">$device</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$is_mobile</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">            <span class="k">break</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">$is_mobile</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nv">$is_mobile</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -1055,6 +1065,25 @@
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/build-your-personal-blog-with-hugo/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://img.brume.top/file/026540fd273527d5f75c0.jpg" loading="lazy" data-key="build-your-personal-blog-with-hugo" data-hash="https://img.brume.top/file/026540fd273527d5f75c0.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">从零到一，用 Hugo 打造你的个人网站</h2>
+        </div>
+    </a>
+</article>
+
             
                 
 <article class="has-image">

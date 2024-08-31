@@ -2,94 +2,100 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://leng-yd.github.io/</loc>
+    <loc>https://brume.top/</loc>
+    <lastmod>2024-08-30T18:12:32+08:00</lastmod>
+  </url><url>
+    <loc>https://brume.top/categories/build/</loc>
+    <lastmod>2024-08-30T18:12:32+08:00</lastmod>
+  </url><url>
+    <loc>https://brume.top/categories/</loc>
+    <lastmod>2024-08-30T18:12:32+08:00</lastmod>
+  </url><url>
+    <loc>https://brume.top/categories/code/</loc>
+    <lastmod>2024-08-30T18:12:32+08:00</lastmod>
+  </url><url>
+    <loc>https://brume.top/tags/hugo/</loc>
+    <lastmod>2024-08-30T18:12:32+08:00</lastmod>
+  </url><url>
+    <loc>https://brume.top/post/</loc>
+    <lastmod>2024-08-30T18:12:32+08:00</lastmod>
+  </url><url>
+    <loc>https://brume.top/tags/</loc>
+    <lastmod>2024-08-30T18:12:32+08:00</lastmod>
+  </url><url>
+    <loc>https://brume.top/p/build-your-personal-blog-with-hugo/</loc>
+    <lastmod>2024-08-30T18:12:32+08:00</lastmod>
+  </url><url>
+    <loc>https://brume.top/tags/typecho/</loc>
     <lastmod>2024-08-28T21:35:54+08:00</lastmod>
   </url><url>
-    <loc>https://leng-yd.github.io/categories/build/</loc>
+    <loc>https://brume.top/p/a-final-gaze-at-typecho/</loc>
     <lastmod>2024-08-28T21:35:54+08:00</lastmod>
   </url><url>
-    <loc>https://leng-yd.github.io/categories/</loc>
-    <lastmod>2024-08-28T21:35:54+08:00</lastmod>
-  </url><url>
-    <loc>https://leng-yd.github.io/categories/code/</loc>
-    <lastmod>2024-08-28T21:35:54+08:00</lastmod>
-  </url><url>
-    <loc>https://leng-yd.github.io/post/</loc>
-    <lastmod>2024-08-28T21:35:54+08:00</lastmod>
-  </url><url>
-    <loc>https://leng-yd.github.io/tags/</loc>
-    <lastmod>2024-08-28T21:35:54+08:00</lastmod>
-  </url><url>
-    <loc>https://leng-yd.github.io/tags/typecho/</loc>
-    <lastmod>2024-08-28T21:35:54+08:00</lastmod>
-  </url><url>
-    <loc>https://leng-yd.github.io/p/a-final-gaze-at-typecho/</loc>
-    <lastmod>2024-08-28T21:35:54+08:00</lastmod>
-  </url><url>
-    <loc>https://leng-yd.github.io/p/a-comparison-between-typecho-and-hugo/</loc>
+    <loc>https://brume.top/p/a-comparison-between-typecho-and-hugo/</loc>
     <lastmod>2024-08-28T20:35:54+08:00</lastmod>
   </url><url>
-    <loc>https://leng-yd.github.io/page/</loc>
+    <loc>https://brume.top/page/</loc>
     <lastmod>2024-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://leng-yd.github.io/reading/</loc>
+    <loc>https://brume.top/reading/</loc>
     <lastmod>2024-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://leng-yd.github.io/p/a-trip-to-changsha/</loc>
+    <loc>https://brume.top/p/a-trip-to-changsha/</loc>
     <lastmod>2024-07-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://leng-yd.github.io/categories/essays/</loc>
+    <loc>https://brume.top/categories/essays/</loc>
     <lastmod>2024-07-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://leng-yd.github.io/tags/travels/</loc>
+    <loc>https://brume.top/tags/travels/</loc>
     <lastmod>2024-07-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://leng-yd.github.io/p/a-look-back-at-2023/</loc>
+    <loc>https://brume.top/p/a-look-back-at-2023/</loc>
     <lastmod>2024-01-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://leng-yd.github.io/tags/annual-summary/</loc>
+    <loc>https://brume.top/tags/annual-summary/</loc>
     <lastmod>2024-01-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://leng-yd.github.io/p/long-dreams/</loc>
-    <lastmod>2023-08-22T00:00:00+00:00</lastmod>
+    <loc>https://brume.top/p/long-dreams/</loc>
+    <lastmod>2023-12-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://leng-yd.github.io/tags/pwa/</loc>
+    <loc>https://brume.top/tags/pwa/</loc>
     <lastmod>2023-08-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://leng-yd.github.io/p/web-2-pwa/</loc>
+    <loc>https://brume.top/p/web-2-pwa/</loc>
     <lastmod>2023-08-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://leng-yd.github.io/p/certainty-and-uncertainty/</loc>
+    <loc>https://brume.top/p/certainty-and-uncertainty/</loc>
     <lastmod>2023-08-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://leng-yd.github.io/p/ai%E5%9C%A8%E4%BA%8C%E7%BB%B4%E7%A0%81%E9%A2%86%E5%9F%9F%E5%B8%A6%E6%9D%A5%E7%9A%84%E5%B7%A8%E5%A4%A7%E5%8F%98%E9%9D%A9/</loc>
+    <loc>https://brume.top/p/ai%E5%9C%A8%E4%BA%8C%E7%BB%B4%E7%A0%81%E9%A2%86%E5%9F%9F%E5%B8%A6%E6%9D%A5%E7%9A%84%E5%B7%A8%E5%A4%A7%E5%8F%98%E9%9D%A9/</loc>
     <lastmod>2023-07-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://leng-yd.github.io/categories/notes/</loc>
+    <loc>https://brume.top/categories/notes/</loc>
     <lastmod>2023-07-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://leng-yd.github.io/tags/qrcode/</loc>
+    <loc>https://brume.top/tags/qrcode/</loc>
     <lastmod>2023-07-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://leng-yd.github.io/tags/cybersecurity/</loc>
+    <loc>https://brume.top/tags/cybersecurity/</loc>
     <lastmod>2023-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://leng-yd.github.io/p/the-solution-of-domain-abnormal-redirections/</loc>
+    <loc>https://brume.top/p/the-solution-of-domain-abnormal-redirections/</loc>
     <lastmod>2023-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://leng-yd.github.io/p/restart/</loc>
+    <loc>https://brume.top/p/restart/</loc>
     <lastmod>2023-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://leng-yd.github.io/p/hello-world/</loc>
+    <loc>https://brume.top/p/hello-world/</loc>
     <lastmod>2022-12-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://leng-yd.github.io/archives/</loc>
+    <loc>https://brume.top/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://leng-yd.github.io/about/</loc>
+    <loc>https://brume.top/about/</loc>
   </url><url>
-    <loc>https://leng-yd.github.io/search/</loc>
+    <loc>https://brume.top/search/</loc>
   </url><url>
-    <loc>https://leng-yd.github.io/links/</loc>
+    <loc>https://brume.top/links/</loc>
   </url>
 </urlset>

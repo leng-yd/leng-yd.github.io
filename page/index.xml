@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pages on 春树暮云</title>
-        <link>https://leng-yd.github.io/page/</link>
+        <link>https://brume.top/page/</link>
         <description>Recent content in Pages on 春树暮云</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>春树暮云</copyright>
-        <lastBuildDate>Mon, 26 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://leng-yd.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 26 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://brume.top/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>读书</title>
-        <link>https://leng-yd.github.io/reading/</link>
+        <link>https://brume.top/reading/</link>
         <pubDate>Mon, 26 Aug 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://leng-yd.github.io/reading/</guid>
+        <guid>https://brume.top/reading/</guid>
         <description>&lt;h2 id=&#34;2024年&#34;&gt;2024年：
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;
@@ -46,18 +46,18 @@
         </item>
         <item>
         <title>归档</title>
-        <link>https://leng-yd.github.io/archives/</link>
+        <link>https://brume.top/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://leng-yd.github.io/archives/</guid>
+        <guid>https://brume.top/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>关于</title>
-        <link>https://leng-yd.github.io/about/</link>
+        <link>https://brume.top/about/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://leng-yd.github.io/about/</guid>
+        <guid>https://brume.top/about/</guid>
         <description>&lt;h2 id=&#34;关于我&#34;&gt;关于我
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;我在黄昏的血色中踽踽独行，感到自己不过是这个忧郁的黄昏大地上一粒微不足道的尘埃。&lt;/p&gt;
@@ -115,18 +115,18 @@ brume 意即雾霭，与“云”同类；&lt;br&gt;
         </item>
         <item>
         <title>搜索</title>
-        <link>https://leng-yd.github.io/search/</link>
+        <link>https://brume.top/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://leng-yd.github.io/search/</guid>
+        <guid>https://brume.top/search/</guid>
         <description></description>
         </item>
         <item>
         <title>友链</title>
-        <link>https://leng-yd.github.io/links/</link>
+        <link>https://brume.top/links/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://leng-yd.github.io/links/</guid>
+        <guid>https://brume.top/links/</guid>
         <description>&lt;p&gt;站点还在搭建中，暂不接受友链申请。&lt;/p&gt;
 </description>
         </item>
