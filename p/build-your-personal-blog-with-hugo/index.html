@@ -15,9 +15,6 @@
 <meta name="twitter:description" content="一起来用世界上最快的网站构建框架搭建个人博客站点吧！"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://img.brume.top/file/026540fd273527d5f75c0.jpg' />
     <link rel="shortcut icon" href="/favicon/favicon.ico" />
-
-  
-
 <style>
     :root {
         --sys-font-family: "EB Garamond";
@@ -1150,40 +1147,40 @@
     >部署</a> 的相关教程。对于体积极小的静态页面来说，我不太认同单独将它配置在云服务器上。我推荐部署在 Vercel, Cloudflare Pages, Github Pages, Gitlab Pages, Netlify 等平台上。由于篇幅所限，我只写出部署至 Github Pages 并部署到 Vercel 的方法。</p>
 <p>我在部署之前，曾经在互联网上查找过部署在各大平台上的 Hugo 博客，并通过测速网站进行速度测试。对各个主题之间的差异忽略不计，结果如下：</p>
 <div class="table-wrapper"><table>
-<thead>
-<tr>
-<th style="text-align:center">部署平台</th>
-<th style="text-align:center">中国最快/最慢时间</th>
-<th style="text-align:center">海外最快/最慢时间</th>
-<th style="text-align:center">中国/海外平均时间</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Github Pages</td>
-<td style="text-align:center">内蒙古联通 0.304s / 湖北武汉电信 10.136s</td>
-<td style="text-align:center">德国法兰克福 0.018s / 南非 2.978s</td>
-<td style="text-align:center">1.829s / 0.541s</td>
-</tr>
-<tr>
-<td style="text-align:center">Vercel</td>
-<td style="text-align:center">中国台湾 0.355s (大陆地区是浙江杭州移动 0.140s) / 黑龙江哈尔滨电信 3.088s</td>
-<td style="text-align:center">美国阿什本 0.050s / 美国洛杉矶② 1.602s</td>
-<td style="text-align:center">0.865s / 0.526s</td>
-</tr>
-<tr>
-<td style="text-align:center">Cloudflare Pages</td>
-<td style="text-align:center">中国台湾 0.147s (大陆地区是上海移动 0.436s)/贵州贵阳移动 11.199s</td>
-<td style="text-align:center">美国阿什本 0.109s / 新加坡 2.133s</td>
-<td style="text-align:center">1.400s / 0.429s</td>
-</tr>
-<tr>
-<td style="text-align:center">我的网站(Vercel + Github Pages)</td>
-<td style="text-align:center">中国香港 0.054s (大陆地区是江苏苏州移动 0.196s)/ 福建厦门电信 7.119s</td>
-<td style="text-align:center">德国法兰克福 0.038s / 加拿大多伦多 0.732s</td>
-<td style="text-align:center">0.789s / 0.436s</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: center">部署平台</th>
+          <th style="text-align: center">中国最快/最慢时间</th>
+          <th style="text-align: center">海外最快/最慢时间</th>
+          <th style="text-align: center">中国/海外平均时间</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">Github Pages</td>
+          <td style="text-align: center">内蒙古联通 0.304s / 湖北武汉电信 10.136s</td>
+          <td style="text-align: center">德国法兰克福 0.018s / 南非 2.978s</td>
+          <td style="text-align: center">1.829s / 0.541s</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Vercel</td>
+          <td style="text-align: center">中国台湾 0.355s (大陆地区是浙江杭州移动 0.140s) / 黑龙江哈尔滨电信 3.088s</td>
+          <td style="text-align: center">美国阿什本 0.050s / 美国洛杉矶② 1.602s</td>
+          <td style="text-align: center">0.865s / 0.526s</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Cloudflare Pages</td>
+          <td style="text-align: center">中国台湾 0.147s (大陆地区是上海移动 0.436s)/贵州贵阳移动 11.199s</td>
+          <td style="text-align: center">美国阿什本 0.109s / 新加坡 2.133s</td>
+          <td style="text-align: center">1.400s / 0.429s</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">我的网站(Vercel + Github Pages)</td>
+          <td style="text-align: center">中国香港 0.054s (大陆地区是江苏苏州移动 0.196s)/ 福建厦门电信 7.119s</td>
+          <td style="text-align: center">德国法兰克福 0.038s / 加拿大多伦多 0.732s</td>
+          <td style="text-align: center">0.789s / 0.436s</td>
+      </tr>
+  </tbody>
 </table></div>
 <p>因此，我推荐通过部署在 Github Pages 上，再通过 Vercel 的将 源文件部署，并绑定域名的方式。</p>
 <p>至于为什么是 Github Pages 而不是随便建一个 Github 仓库，因为包括官网在内的网上的大多数方法都基于 Github Pages 的。</p>
