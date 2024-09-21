@@ -7,7 +7,31 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>春树暮云</copyright>
-        <lastBuildDate>Tue, 18 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://brume.top/categories/notes/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 20 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://brume.top/categories/notes/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>解决 Vercel &#43; Cloudflare 部署中的 ERR_TOO_MANY_REDIRECTS 错误</title>
+        <link>https://brume.top/p/solution-for-err-too-many-redirects-error/</link>
+        <pubDate>Fri, 20 Sep 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://brume.top/p/solution-for-err-too-many-redirects-error/</guid>
+        <description>&lt;p&gt;我在部署本网站时，使用了 Vercel 作为前端托管服务，并将域名解析交给了 Cloudflare。初步配置完成后，满怀期待地访问了自己的网站，结果迎面而来的却是浏览器的报错提示：&lt;code&gt;ERR_TOO_MANY_REDIRECTS&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;我非常困惑，仅仅将域名绑定到 Vercel 并在 Cloudflare 上做了域名解析，且并未做任何复杂的配置，何来的重定向次数过多？在网上搜集了一些资料，总结起来，这个问题是由于 Cloudflare 在“灵活”模式下通过 HTTP 与 Vercel 通信，而 Vercel 会将所有 HTTP 请求重定向到 HTTPS，导致重定向循环而造成的。&lt;/p&gt;
+&lt;h2 id=&#34;从-ssltls-配置谈起&#34;&gt;从 SSL/TLS 配置谈起
+&lt;/h2&gt;&lt;p&gt;Cloudflare 提供了几种 SSL/TLS 的配置模式，其中最常见的模式包括“灵活”（Flexible）和“完全”（Full）。我经历的报错正是因为 SSL/TLS 设置不当引起的。以下是这几种模式主要特点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;灵活模式（Flexible）：&lt;/strong&gt; 在这种模式下，Cloudflare 与客户端的连接是通过 HTTPS（SSL 加密）完成的，但是 Cloudflare 与源服务器（例如 Vercel）之间的连接却是使用 HTTP。这意味着从用户访问网站到 Cloudflare 是加密的，但从 Cloudflare 到 Vercel 是未加密的。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;完全模式（Full）：&lt;/strong&gt; Cloudflare 与客户端以及 Cloudflare 与源服务器之间都使用 HTTPS 进行通信，但是并不验证源服务器的 SSL 证书是否合法。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;完全（严格）模式（Full (Strict)）：&lt;/strong&gt; 同样使用 HTTPS，但要求 Cloudflare 验证源服务器的 SSL 证书是有效的、可信的。  在部署网站时，默认情况下 Cloudflare 的 SSL/TLS 设置可能是“灵活”。这意味着，当客户端通过 HTTPS 访问网站时，Cloudflare 会将请求解密后以 HTTP 的形式传递给 Vercel。而 Vercel 会自动将所有的 HTTP 请求重定向到 HTTPS。这一来一回便产生了一个问题：Vercel 将请求重定向到 HTTPS，而 Cloudflare 接收到 HTTPS 请求后再次转发，形成了一个自我循环。这时，浏览器会检测到这一过多的重定向，并抛出 ERR_TOO_MANY_REDIRECTS 错误。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;报错原因&#34;&gt;报错原因
+&lt;/h2&gt;&lt;p&gt;当 Vercel 收到 HTTP 请求时，它会返回 308 状态码，告知客户端应将请求重定向到 HTTPS URL。HTTP 308 是一种永久性重定向，意味着客户端必须使用 HTTPS 协议进行后续请求。&lt;/p&gt;
+&lt;p&gt;当客户端（即用户的浏览器）最初通过 HTTPS 访问 &lt;a class=&#34;link&#34; href=&#34;https://brume.top&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://brume.top&lt;/a&gt; 时，Cloudflare 在灵活模式下将请求以 HTTP 方式传给 Vercel。Vercel 接收到 HTTP 请求后，按照其默认行为，发出 308 永久重定向，强制要求将请求重定向至 HTTPS 版本的相同 URL。Cloudflare 将此 HTTPS 重定向信息再次发送给客户端，而客户端早已处于 HTTPS 状态，因此这个重定向实际上是无效的。浏览器一再收到相同的重定向指令，形成了一个闭环，导致浏览器认为重定向次数过多，最终返回 ERR_TOO_MANY_REDIRECTS 错误。&lt;/p&gt;
+&lt;p&gt;此外，对于这个所谓的“灵活模式”，从安全性角度看，它虽然表面上为用户提供了 HTTPS 访问的体验，但在 Cloudflare 和源服务器之间的通信仍然是明文的 HTTP，这使得数据在传输过程中存在被窃听或篡改的风险。因此，严格意义上讲，“灵活模式”并不是一个安全的方案。&lt;/p&gt;
+&lt;h2 id=&#34;解决方案&#34;&gt;解决方案
+&lt;/h2&gt;&lt;p&gt;要解决这个问题，只需更改 Cloudflare 的 SSL/TLS 配置，将其从“灵活”改为“完全（严格）”，确保 Cloudflare 与 Vercel 之间的通信使用的是 HTTPS 协议即可。 此时，Cloudflare 将强制会以 HTTPS 方式与 Vercel 通信，避免了重定向循环。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>AI在二维码领域带来的巨大变革</title>
         <link>https://brume.top/p/ai%E5%9C%A8%E4%BA%8C%E7%BB%B4%E7%A0%81%E9%A2%86%E5%9F%9F%E5%B8%A6%E6%9D%A5%E7%9A%84%E5%B7%A8%E5%A4%A7%E5%8F%98%E9%9D%A9/</link>
         <pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate>
