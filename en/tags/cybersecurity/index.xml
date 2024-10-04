@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Cybersecurity on Spring trees and evening clouds</title>
+        <link>https://brume.top/en/tags/cybersecurity/</link>
+        <description>Recent content in Cybersecurity on Spring trees and evening clouds</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>春树暮云</copyright>
+        <lastBuildDate>Sat, 01 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://brume.top/en/tags/cybersecurity/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>the solution to domain abnormal redirections</title>
+        <link>https://brume.top/en/p/the-solution-of-domain-abnormal-redirections/</link>
+        <pubDate>Sat, 01 Jul 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://brume.top/en/p/the-solution-of-domain-abnormal-redirections/</guid>
+        <description>&lt;p&gt;Today, after completing the self-recruitment exam, I completely migrated my original personal website here. It reminded me of when my previous site was hijacked by DNS, so I decided to write a short passage based on what I&amp;rsquo;ve learned, just in case it comes in handy.&lt;/p&gt;
+&lt;p&gt;In my old class, during breaks, a group of classmates often gathered around the computer screen to play games. One time, after surfing the internet for a while, they suddenly started shouting excitedly. I looked up to see a few boys running towards me, laughing as they told me my homepage had redirected to another site. By then, they had already closed the redirected site. After checking the browsing history, I was quite surprised. However, when I opened the website that evening at home, it was just as usual. Afterward, analysis revealed that my original site had likely been subjected to DNS hijacking.&lt;/p&gt;
+&lt;p&gt;Since I had acquired a new domain name, the old site had been abandoned, but the new site still needed protection against DNS hijacking. Below are the methods I use to tackle DNS hijacking.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;confirm-whether-your-domain-has-been-subjected-to-dns-hijacking&#34;&gt;Confirm whether your domain has been subjected to DNS hijacking
+&lt;/h2&gt;&lt;p&gt;A domain that has been hijacked will redirect to other sites regardless of how you access it. In such cases, you can try accessing it via the IP address. If the IP access works fine but the domain keeps redirecting, then your domain has probably been hijacked. In this situation, you need to contact your DNS resolver or server personnel for assistance.&lt;/p&gt;
+&lt;h2 id=&#34;check-if-your-template-files-have-been-altered-with-redirect-codes&#34;&gt;Check if your template files have been altered with redirect codes
+&lt;/h2&gt;&lt;p&gt;At this point, you can temporarily switch to another secure template in the backend. If the redirection stops, it indicates that the redirect code was embedded in the template files.&lt;/p&gt;
+&lt;p&gt;Redirect codes are often added to JS files, especially the jQuery library, which is frequently targeted. You should check the beginning and end of each JS file for any additional encrypted codes. If you find any, delete them and clear the cache before trying to access the site again.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;lt;!-- Using meta tag for redirection --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;meta&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;http-equiv&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;refresh&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;0;url=http://example.com&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;lt;!-- Using JavaScript for redirection --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;language&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;javascript&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;text/javascript&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;window&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;location&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;href&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;http://example.com&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Alternatively, you can replace any suspicious files or the entire template package with the original files from the downloaded template zip.&lt;/p&gt;
+&lt;h2 id=&#34;if-switching-templates-still-results-in-redirects-your-cms-or-runtime-environment-might-be-compromised&#34;&gt;If switching templates still results in redirects, your CMS or runtime environment might be compromised
+&lt;/h2&gt;&lt;p&gt;In such cases, hackers often tamper with the runtime environment, for instance, by hacking Apache or Nginx, automatically injecting redirect codes into web pages. They can even control the frequency, adding code just once a day and only on mobile visits, making it extremely subtle and difficult to trace.&lt;/p&gt;
+&lt;p&gt;In this situation, you can resolve the issue by reinstalling the CMS program or uninstalling and reinstalling Apache/Nginx via your server management panel (like &lt;a class=&#34;link&#34; href=&#34;https://bt.cn&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Baota&lt;/a&gt;).&lt;/p&gt;
+&lt;h2 id=&#34;if-problems-persist-your-database-or-server-might-be-hacked&#34;&gt;If problems persist, your database or server might be hacked
+&lt;/h2&gt;&lt;p&gt;In such cases, it’s best to directly contact the server provider’s staff for assistance, as it’s likely too complex for an ordinary user to resolve.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;In summary, the overall approach is to identify the specific location of the problem and then address it accordingly.&lt;/p&gt;
+&lt;p&gt;Always remember to back up before making any modifications or fixes!&lt;/p&gt;
+&lt;p&gt;Additionally, maintain good security practices for your server and regularly back up your website and database to prevent issues before they arise!&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

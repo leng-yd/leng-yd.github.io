@@ -33,10 +33,10 @@
         </item>
         <item>
         <title>AI在二维码领域带来的巨大变革</title>
-        <link>https://brume.top/p/ai%E5%9C%A8%E4%BA%8C%E7%BB%B4%E7%A0%81%E9%A2%86%E5%9F%9F%E5%B8%A6%E6%9D%A5%E7%9A%84%E5%B7%A8%E5%A4%A7%E5%8F%98%E9%9D%A9/</link>
+        <link>https://brume.top/p/the-huge-revolution-that-ai-has-brought-in-the-field-of-qr-code/</link>
         <pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://brume.top/p/ai%E5%9C%A8%E4%BA%8C%E7%BB%B4%E7%A0%81%E9%A2%86%E5%9F%9F%E5%B8%A6%E6%9D%A5%E7%9A%84%E5%B7%A8%E5%A4%A7%E5%8F%98%E9%9D%A9/</guid>
+        <guid>https://brume.top/p/the-huge-revolution-that-ai-has-brought-in-the-field-of-qr-code/</guid>
         <description>&lt;img src="https://dongli.pages.dev/file/366fe8fab8b6919f01237.jpg" alt="Featured image of post AI在二维码领域带来的巨大变革" /&gt;&lt;blockquote&gt;
 &lt;p&gt;近年来，AI技术的飞速发展已经深刻地改变了我们的生活方式。二维码作为一种快速、便捷的信息传递工具，也在全球范围内广泛应用。本文旨在探讨&lt;strong&gt;AI&lt;/strong&gt;在二维码领域所带来的变革，并阐述其对人们生活的积极影响。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -123,8 +123,8 @@
 &lt;li&gt;通过Stable Diffusion将这张图片美化。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;但看似简单，实际操作可能稍微麻烦。通常，Stable Diffusion对设备配置有较高要求，因此，相关开发者制作了Stable Diffusion 的网页版（使用共享GPU,功能受限），例如dreamstudio,huggingface spaces上的Stable Diffusion，qrbtf网站。&lt;/p&gt;
-&lt;p&gt;###实操成品
-&lt;img src=&#34;https://e7a23aee.dongli.pages.dev/file/40b9f9b025273543a023e.png&#34;
+&lt;h3 id=&#34;实操成品&#34;&gt;实操成品
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://e7a23aee.dongli.pages.dev/file/40b9f9b025273543a023e.png&#34;
 	
 	
 	
@@ -168,8 +168,8 @@
 	
 &gt;
 △huggingface生成的中世纪风格的古堡图片&lt;/p&gt;
-&lt;p&gt;###后记
-这篇文章写得拖沓，从7月10日开始写起，一直写写写写写了九天，直到7月18日终稿（也可能是自己最近事情比较多的缘故吧），中途可能有些文字不太连贯，望友海涵。&lt;/p&gt;
+&lt;h3 id=&#34;后记&#34;&gt;后记
+&lt;/h3&gt;&lt;p&gt;这篇文章写得拖沓，从7月10日开始写起，一直写写写写写了九天，直到7月18日终稿（也可能是自己最近事情比较多的缘故吧），中途可能有些文字不太连贯，望友海涵。&lt;/p&gt;
 &lt;p&gt;qrbtf的二维码是迄今我所知道的，效果最好的AI二维码生成工具之一。但是它现在还在内测，我无法利用它生成自己的二维码，它生成的二维码暂时都是指向它的站点的。例如下图：
 &lt;img src=&#34;https://e7a23aee.dongli.pages.dev/file/01edfd6cb8482370c2098.jpg&#34;
 	
@@ -197,11 +197,6 @@
     &gt;https://huggingface.co/spaces/stabilityai/stable-diffusion&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;总结与反思&#34;&gt;总结与反思
 &lt;/h3&gt;&lt;p&gt;AI在二维码领域的应用给人们的生活带来了巨大的变革。它提高了扫描速度和准确度，拓宽了二维码的应用领域，加强了安全保障机制，并促进了商业创新的发展，令人眼前一亮。然而，我们也要认识到AI技术的应用不会不是一把双刃剑。优胜劣汰。生产力进步，原地踏步终究会被淘汰。（朋友语）&lt;/p&gt;
-&lt;h3 id=&#34;参考资料&#34;&gt;参考资料
-&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://mp.weixin.qq.com/s?__biz=MzIwMjE3MDIwMA==&amp;amp;mid=2247488257&amp;amp;idx=1&amp;amp;sn=a6d570130b8b0d35559a527ebdd6cdbb&amp;amp;chksm=96e39936a1941020bd583ecca262804a3e62f24e1b5bdb21f1f5879992095c7bfb3ad8425464&amp;amp;mpshare=1&amp;amp;scene=23&amp;amp;srcid=0709hIkyYvLORMrpxNqvswGV&amp;amp;sharer_sharetime=1688911266684&amp;amp;sharer_shareid=65c635be95fe5386f11b44b2f9b0787f#rd&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;其一&lt;/a&gt;&lt;br&gt;
-&lt;a class=&#34;link&#34; href=&#34;https://mp.weixin.qq.com/s/i4WR5ULH1ZZYl8Watf3EPw&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;其二&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
         
